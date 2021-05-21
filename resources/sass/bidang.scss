@@ -1,0 +1,192 @@
+body{
+    overflow-x: hidden;
+}
+/* BIDANG DETAIL */
+.bidang-detail{
+    background-image: url('/assets/images/bg-section.png');        
+    background-position: center;
+    padding-top: 12%;
+    background-repeat: repeat-y;
+}
+.card-bidang{
+    margin-bottom: 4%;
+}
+.card-bidang img{
+    width: 100%;
+    position: absolute;
+    z-index: 0;          
+}
+.card-bidang.mst-b .text{
+    position: sticky;    
+    z-index: 1;
+    padding: 17% 50% 10% 15%;
+}
+.card-bidang.ftr-b .text{
+    position: sticky;    
+    z-index: 1;
+    padding: 10% 10% 10% 50%;
+}
+.card-bidang.ish-b .text{
+    position: sticky;    
+    z-index: 1;
+    padding: 10% 50% 10% 15%;
+}
+.text h5{
+    font-size: 4vh;
+}
+.text p{    
+    font-size: 2vh;
+}
+
+.mst-b .text h5{
+    color:#fff;
+}
+.ftr-b .text h5{
+    color:#604417;
+}
+.ish-b .text h5{
+    color:#13424F;
+}
+
+.mst-b .text p{
+    color:#fff;
+    font-size: 14px;
+}
+.ftr-b .text p{
+    color: #4D4D4D;
+}
+.ish-b .text p{
+    color: #4D4D4D;
+}
+.medali{
+    width: 100%;
+    text-align: center;
+    /* height: 300px;    */
+}
+.medali img{
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    justify-content: center;
+}
+.medali h4{    
+    width: 100%;
+    margin: auto;
+    margin-top: 20px;
+}
+.gold img, .silver img, .bronze img, .etc img {
+    width: 60%;
+}
+.gold h4{
+    color: #FFD144;
+}
+
+.silver h4{
+    color: #1B75BB;
+}
+
+.bronze h4{
+    color: #C74A7E;
+}
+
+.etc h4{
+    color: #C78B1F;
+}
+
+.footer2{
+    padding-top: 50px;
+    background-color: #1B75BB;
+}
+.footer2-k-img{
+    width:48%;
+}
+.footer2-p-img{
+    width: 52%;
+}
+.sosmed{
+    display: flex;
+    flex-direction: row;   
+    justify-content: center; 
+}
+.sosmed a{
+    width: 38px;
+    height: 38px;   
+    border: 1px #fff solid;
+    margin: 5px;
+    padding: 5px 5px;
+    color: #fff;
+    border-radius: 50%;
+    text-align: center;
+}
+.sosmed a:hover{
+    color: #fff;
+    text-decoration: none;
+}
+@media (max-width: 991.98px) {
+    .card-bidang.mst-b .text{
+        background-color: #3A77CE;
+        width: 80%;
+        padding: 24px;
+        margin: auto;
+        border-radius: 15px;
+    }
+    .card-bidang.ftr-b .text{
+        background-color: #FBFC78;
+        width: 80%;
+        padding: 24px;
+        margin: auto;
+        border-radius: 15px;
+    }
+    .card-bidang.ish-b .text{
+        background-color: #8BC53F;
+        width: 80%;
+        padding: 24px;
+        margin: auto;
+        border-radius: 15px;
+    }
+    .card-bidang .text img{
+        width: 100%;
+        position: relative;
+        bottom: -24px;
+        right: -24px;
+    }
+    .card-bidang.ftr-b .text img{
+        /* right: auto; */
+        left:-24px;
+    }  
+      
+}
+
+/* Responsive */
+
+ /* Extra small devices (portrait phones, less than 576px) */
+ @media (max-width: 575.98px) {    
+    /* BIDANG DETAIL */
+    .bidang-detail{
+        padding-top: 28%;
+    }    
+    
+}
+/* Small devices (landscape phones, 576px and up) */
+@media (min-width: 576px) and (max-width: 767.98px) {
+    
+    
+
+}
+
+/* Medium devices (tablets, 768px and up) */
+@media (min-width: 768px) and (max-width: 991.98px) {  
+     
+    
+}
+
+
+/* Large devices (desktops, 992px and up) */
+@media (min-width: 992px) and (max-width: 1199.98px) {
+    
+}
+
+ /* Extra large devices (large desktops, 1200px and up) */
+@media (min-width: 1200px) {
+    
+}

@@ -1,0 +1,26 @@
+{
+    "informasi": [
+        { 
+          "id": 1, 
+          "info_id": 1,
+          "title": "Judul Terbaru 3", 
+          "desc": "Lorem ipsum dolor sit amet Lorem ipsum dolor sit amet Lorem ipsum dolor sit amet Lorem ipsum dolor sit amet Lorem ipsum dolor sit amet" ,
+          "date": "23 April 2021"
+        },
+        { 
+            "id": 2, 
+            "info_id": 2,
+            "title": "Judul Terbaru 2", 
+            "desc": " A Lorem ipsum dolor sit amet Lorem ipsum dolor sit amet Lorem ipsum dolor sit amet Lorem ipsum dolor sit amet Lorem ipsum dolor sit amet" ,
+            "date": "23 April 2021"
+        },
+        { 
+            "id": 3, 
+            "info_id": 3,
+            "title": "Judul Terbaru 2", 
+            "desc": " A Lorem ipsum dolor sit amet Lorem ipsum dolor sit amet Lorem ipsum dolor sit amet Lorem ipsum dolor sit amet Lorem ipsum dolor sit amet" ,
+            "date": "23 April 2021"
+        }
+        
+    ]    
+}
