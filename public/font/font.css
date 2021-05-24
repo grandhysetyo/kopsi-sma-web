@@ -1,0 +1,49 @@
+@font-face {
+    font-family: 'Myriad Pro Regular';
+    font-style: normal;
+    font-weight: normal;
+    src: local('Myriad Pro Regular'), url('/font/MyriadPro/MYRIADPRO-REGULAR.woff') format('woff');
+}
+
+@font-face {        
+    font-family: 'Myriad Pro Bold';
+    font-style: normal;
+    font-weight: normal;
+    src: local('Myriad Pro Bold'), url('/font/MyriadPro/MYRIADPRO-BOLD.woff') format('woff');
+}
+
+@font-face {        
+    font-family: 'Myriad Pro Bold';
+    font-style: normal;
+    font-weight: normal;
+    src: local('Myriad Pro Bold'), url('/font/MyriadPro/MYRIADPRO-BOLD.woff') format('woff');
+}
+
+@font-face {        
+    font-family: 'Abject Failure';
+    font-style: normal;
+    font-weight: normal;
+    src: local('Abject Failure'), url('/font/AbjectFailure.otf') format('woff');
+}
+
+@font-face {        
+    font-family: 'Montserrat Regular';
+    font-style: normal;
+    font-weight: normal;
+    src: local('Montserrat-Regular'), url('/font/Montserrat/Montserrat-Regular.ttf') format('truetype');
+}
+
+@font-face {        
+    font-family: 'Montserrat Medium';
+    font-style: normal;
+    font-weight: normal;
+    src: local('Montserrat-Medium'), url('/font/Montserrat/Montserrat-Medium.ttf') format('truetype');
+}
+
+@font-face {        
+    font-family: 'Montserrat Bold';
+    font-style: normal;
+    font-weight: normal;
+    src: local('Montserrat-Bold'), url('/font/Montserrat/Montserrat-Bold.ttf') format('truetype');
+}
+    

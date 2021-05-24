@@ -4,9 +4,9 @@ import {
   Switch,
   Route  
 } from "react-router-dom";
-
 import AOS from "aos";
-import "aos/dist/aos.css";
+
+
 
 import Navbar from "./components/Navbar";
 import Beranda from "./pages/Beranda";
@@ -15,6 +15,7 @@ import Login from "./pages/Login";
 
 // Style
 import '../sass/style.scss';
+import "aos/dist/aos.css";
 
 // 0 Light
 // 1 Dark

@@ -1,3 +1,10 @@
+$myriad-bold: 'Myriad Pro Bold';
+$myriad-reg: 'Myriad Pro Regular';
+$abjectFailure: 'Abject Failure';
+$montserrat-reg: 'Montserrat Regular';
+$montserrat-med: 'Montserrat Medium';
+$montserrat-bold: 'Montserrat Bold';
+
 body{
     overflow-x: hidden;
 }
@@ -9,7 +16,7 @@ body{
     background-repeat: repeat-y;
 }
 .card-bidang{
-    margin-bottom: 4%;
+    margin-bottom: 8%;
 }
 .card-bidang img{
     width: 100%;
@@ -26,16 +33,21 @@ body{
     z-index: 1;
     padding: 10% 10% 10% 50%;
 }
+.card-bidang.card-bidang.ftr-b{
+    margin-bottom: 14%;
+}
 .card-bidang.ish-b .text{
     position: sticky;    
     z-index: 1;
-    padding: 10% 50% 10% 15%;
+    padding: 7% 50% 10% 15%;
 }
 .text h5{
     font-size: 4vh;
+    font-family: $montserrat-bold;    
 }
 .text p{    
     font-size: 2vh;
+    font-family: $montserrat-reg;
 }
 
 .mst-b .text h5{
@@ -60,8 +72,8 @@ body{
 }
 .medali{
     width: 100%;
-    text-align: center;
-    /* height: 300px;    */
+    text-align: center;    
+    margin-bottom: 80px;
 }
 .medali img{
     display: block;
@@ -73,6 +85,7 @@ body{
     width: 100%;
     margin: auto;
     margin-top: 20px;
+    font-family: $montserrat-bold;
 }
 .gold img, .silver img, .bronze img, .etc img {
     width: 60%;
@@ -96,6 +109,12 @@ body{
 .footer2{
     padding-top: 50px;
     background-color: #1B75BB;
+}
+.footer2 b{
+    font-family: $montserrat-reg;    
+}
+.footer2 p{
+    font-family: $montserrat-reg;    
 }
 .footer2-k-img{
     width:48%;

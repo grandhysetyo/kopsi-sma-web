@@ -13,7 +13,8 @@ use Illuminate\Support\Facades\Route;
 | is assigned the "api" middleware group. Enjoy building your API!
 |
 */
+// Import Controller
+use App\Http\Controllers\FrontCtrl;
 
-Route::middleware('auth:api')->get('/user', function (Request $request) {
-    return $request->user();
-});
+Route::get('/informasi', [FrontCtrl::class, 'getDataInfo']);
+Route::get('/teaser', [FrontCtrl::class, 'getDataTeaser']);

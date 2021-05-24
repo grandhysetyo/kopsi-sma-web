@@ -29,7 +29,7 @@ const Beranda = (props) => {
             direction={'vertical'} 
             slidesPerView={1}                 
             mousewheel={true} 
-            pagination={{"clickable": true}}
+            pagination={{"clickable": true}}            
             onSlideChange={(e) => {
                 props.sectionActive(e.realIndex)                 
                 if(e.realIndex===1){

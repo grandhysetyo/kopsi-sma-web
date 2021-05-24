@@ -31,7 +31,7 @@ export default class Bidang extends Component {
                         </div>
                     </div>
                     <div className="row">
-                        <div className="col-lg-12 p-0" data-aos="fade-right">
+                        <div className="col-lg-12 p-0 " data-aos="fade-right">
                             <div className="card-bidang ftr-b">   
                                 <img src="/assets/images/ftr-bidang.png" alt="" className="d-none d-lg-block d-xl-block"/> 
                                 <div className="text">
