@@ -14,8 +14,7 @@ body {
 }
 
 body {
-  background: #eee;
-  font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
+  background: #eee;  
   font-size: 14px;
   color: #000;
   margin: 0;
@@ -339,13 +338,13 @@ section {
     font-family: $montserrat-reg;    
 }
 .pedoman .hero{
-    width: 80%;
+    width: 35%;
     display: block;
     margin: auto;
 }
 .btn-pedoman{
     display: block;
-    width: 90%;
+    width: 70%;
     margin: auto;
     background-color: #2F62AD;
     text-align: center;
@@ -521,6 +520,9 @@ section {
         font-size: 20px;
         margin-bottom: 12px;
     }
+    .title-section2{        
+        margin-bottom: 10px;
+    }
     /* INTRO */
     .intro h1 {
         margin-top: 35px;
@@ -546,7 +548,7 @@ section {
     }
     /* PEDOMAN INFO */
     .pedoman .hero{
-        width: 50%;        
+        width: 35%;        
     }
     .btn-pedoman{        
         width: 70%;                        
@@ -564,6 +566,9 @@ section {
         font-size: 14px;        
     }
     /* TEASER */
+    .teaser{
+        padding-top: 0;
+    }
     .teaser iframe{
         margin-left: auto;
         margin-right: auto;
@@ -578,6 +583,10 @@ section {
     /* BIDANG DETAIL */
     .bidang-detail{
         padding-top: 28%;
+    }
+    // Footer
+    .footer{
+        padding-top: 0;
     }
 } 
 
