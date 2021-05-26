@@ -20,4 +20,6 @@ mix.js('resources/js/app-tail.js', 'public/js').postCss('resources/css/app-tail.
     require('tailwindcss'),
     require('autoprefixer'),
 ]);
+
+mix.sass('resources/sass/login.scss', 'public/css');
     

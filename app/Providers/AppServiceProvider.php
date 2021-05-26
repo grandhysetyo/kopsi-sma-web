@@ -13,7 +13,9 @@ class AppServiceProvider extends ServiceProvider
      */
     public function register()
     {
-        //
+        foreach(Glob(App_path('helpers/*.php')) As $Filename){
+            Require_once $Filename;
+        }
     }
 
     /**

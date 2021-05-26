@@ -1,5 +1,6 @@
 const request_api = {
-    fetchInformasi: `api/informasi` ,    
+    fetchInformasi: `api/informasi` ,
+    fetchTimeline: `api/linimasa` ,    
     fetchTeaser: 'api/teaser'
  }
  

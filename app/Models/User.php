@@ -20,6 +20,7 @@ class User extends Authenticatable
         'name',
         'email',
         'password',
+        'role',
     ];
 
     /**
@@ -40,4 +41,24 @@ class User extends Authenticatable
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
+
+    public function ketua()
+    {
+        return $this->hasOne(\App\Models\Ketua::class, 'user_id','id');
+    }
+
+    public function anggota()
+    {
+        return $this->hasOne(\App\Models\Anggota::class, 'user_id','id');
+    }
+
+    public function juri()
+    {
+        return $this->hasOne(\App\Models\Juri::class, 'user_id','id');
+    }
+
+    public function twibbon()
+    {
+        return $this->hasOne(\App\Models\Twibbonice::class, 'user_id','id');
+    }
 }

@@ -44,9 +44,6 @@ function App() {
         <Route path="/bidang" exact>          
           <Bidang sectionActive={handleSectionChange}/>
         </Route>
-        <Route path="/login" exact>
-          <Login sectionActive={handleSectionChange}/>
-        </Route>
       </Switch>
     </Router>
     </>

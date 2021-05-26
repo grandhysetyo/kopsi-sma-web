@@ -1,56 +1,93 @@
-<x-guest-layout>
-    <x-auth-card>
-        <x-slot name="logo">
-            <a href="/">
-                <x-application-logo class="w-20 h-20 fill-current text-gray-500" />
-            </a>
-        </x-slot>
-
-        <!-- Session Status -->
-        <x-auth-session-status class="mb-4" :status="session('status')" />
-
-        <!-- Validation Errors -->
-        <x-auth-validation-errors class="mb-4" :errors="$errors" />
-
-        <form method="POST" action="{{ route('login') }}">
-            @csrf
-
-            <!-- Email Address -->
-            <div>
-                <x-label for="email" :value="__('Email')" />
-
-                <x-input id="email" class="block mt-1 w-full" type="email" name="email" :value="old('email')" required autofocus />
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Masuk</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
+    <link rel="stylesheet" href="{{asset('css/login.css')}}">
+    <script src="{{asset('superadmin/js/jquery.min.js')}}"></script>
+    <script src="//parsleyjs.org/dist/parsley.js"></script> 
+    <style>
+        input.parsley-success,
+        select.parsley-success,
+        textarea.parsley-success {
+          color: #468847;
+          background-color: #DFF0D8;
+          border: 1px solid #D6E9C6;
+        }
+      
+        input.parsley-error,
+        select.parsley-error,
+        textarea.parsley-error {
+          color: #B94A48;
+          background-color: #F2DEDE;
+          border: 1px solid #EED3D7;
+        }
+      
+        .parsley-errors-list {
+          margin: 2px 0 3px;
+          padding: 0;
+          list-style-type: none;
+          font-size: 0.9em;
+          line-height: 0.9em;
+          opacity: 0;
+      
+          transition: all .3s ease-in;
+          -o-transition: all .3s ease-in;
+          -moz-transition: all .3s ease-in;
+          -webkit-transition: all .3s ease-in;
+        }
+      
+        .parsley-errors-list.filled {
+          opacity: 1;
+        }
+        
+        .parsley-type, .parsley-required, .parsley-equalto, .parsley-pattern, .parsley-length{
+         color:#ff0000;
+        }
+        
+    </style>
+</head>
+<body>
+    <section class="login">
+        <img src="{{asset('assets/images/sky-login.png')}}" class="sky" alt="" />
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-5 mx-auto">
+                    
+                    <form action="{{route('login')}}" id="validate_form" method="POST" class="form-login">
+                        @csrf
+                        <x-auth-validation-errors class="mb-4" :errors="$errors" />
+                        <div>
+                            <img src="{{asset('assets/images/logo.png')}}" class="img-fluid" style="height: 70px; display: block;
+                            margin-left: auto;
+                            margin-right: auto;">
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Surel (Email)</label>
+                            <input value="{{old('email')}}" required data-parsley-type="email" data-parsley-trigger="keyup" type="email" id="email" class="form-control" name="email" placeholder="Enter email" />
+                        </div>
+                        <div class="form-group">
+                            <label for="exampleInputPassword1">Kata Sandi (Password)</label>
+                            <input type="password" name="password" class="form-control" id="exampleInputPassword1" placeholder="Kata Sandi" />
+                        </div>                                    
+                        <button type="submit" class="btn-me btn-masuk">Masuk</button>
+                        <span class="text-muted">Belum memiliki akun?</span>
+                        <a href="/daftar" class="btn-me btn-daftar">Daftar</a>
+                    </form>
+                </div>
             </div>
-
-            <!-- Password -->
-            <div class="mt-4">
-                <x-label for="password" :value="__('Password')" />
-
-                <x-input id="password" class="block mt-1 w-full"
-                                type="password"
-                                name="password"
-                                required autocomplete="current-password" />
-            </div>
-
-            <!-- Remember Me -->
-            <div class="block mt-4">
-                <label for="remember_me" class="inline-flex items-center">
-                    <input id="remember_me" type="checkbox" class="rounded border-gray-300 text-indigo-600 shadow-sm focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50" name="remember">
-                    <span class="ml-2 text-sm text-gray-600">{{ __('Remember me') }}</span>
-                </label>
-            </div>
-
-            <div class="flex items-center justify-end mt-4">
-                @if (Route::has('password.request'))
-                    <a class="underline text-sm text-gray-600 hover:text-gray-900" href="{{ route('password.request') }}">
-                        {{ __('Forgot your password?') }}
-                    </a>
-                @endif
-
-                <x-button class="ml-3">
-                    {{ __('Log in') }}
-                </x-button>
-            </div>
-        </form>
-    </x-auth-card>
-</x-guest-layout>
+        </div>
+    </section>
+   
+    <script>
+        $(document).ready(function(){
+        
+         $('#validate_form').parsley();
+        
+        });
+    </script>
+</body>
+</html>
