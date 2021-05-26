@@ -35,7 +35,7 @@ export class SectionPedomanInfo extends Component {
     render() {
         return (
             <>        
-            <section className="h-100">
+            <section id="ped" className="h-100">
                 <div className="row h-100">
                     <div className="pedoman col-sm-12 col-md-12 col-lg-6 align-content-center">
                         <div className="container h-100">
@@ -49,7 +49,7 @@ export class SectionPedomanInfo extends Component {
                                     <div className="row">
                                         <div className="col-lg-12">
                                             <img src="/assets/images/cover-pedoman.png" alt="" className="hero" id="pedoman-hero" data-aos="fade-up" data-aos-delay="300"/>
-                                            <a href="/" className="btn-pedoman" id="pedoman-unduh" data-aos="zoom-in-up" data-aos-delay="400">Unduh Pedoman Kopsi SMA Tahun 2021</a>
+                                            <a href="https://pusatprestasinasional.kemdikbud.go.id/wp-content/uploads/2021/05/Pedoman-KoPSI-Tahun-2021.pdf" target="_blank" className="btn-pedoman" id="pedoman-unduh" data-aos="zoom-in-up" data-aos-delay="400">Unduh Pedoman Kopsi SMA Tahun 2021</a>
                                         </div>
                                         
                                     </div>
@@ -70,9 +70,9 @@ export class SectionPedomanInfo extends Component {
                                         { this.state.informasi.map((data,idx) => 
                                             <div className={idx===0 ? "col-lg-12 d-block" : idx===1 ? "col-lg-12 d-none d-md-block d-lg-block d-xl-block" : "col-lg-12 d-none d-md-block d-lg-block d-xl-block"} key={data.info_id} id={'informasi-'+idx} data-aos="fade-up" data-aos-delay={6+idx+'00'}>
                                                 <a href="/" className="informasi">                                                      
-                                                    <h5 className={idx === 0 ? "first-t" : idx===1 ? "second-t" : "third-t"}>{data.title}</h5>
-                                                    <span className={idx === 0 ? "first" : idx===1 ? "second" : "third"}>{data.date}</span>                                                                       
-                                                    <p>{data.desc}</p>
+                                                    <h5 className={idx === 0 ? "first-t" : idx===1 ? "second-t" : "third-t"}>{data.judul}</h5>
+                                                    <span className={idx === 0 ? "first" : idx===1 ? "second" : "third"}>{data.tanggal}</span>                                                                       
+                                                    <p>{data.content}</p>
                                                 </a>
                                             </div>
                                         )}                                                                                                                       

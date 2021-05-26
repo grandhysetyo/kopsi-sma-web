@@ -24,27 +24,22 @@ const Navbar = (props) => {
                 </button>
                 <div className="collapse navbar-collapse" id="navbarNavDropdown">
                     <ul className="navbar-nav ml-auto">
-                        <li className="nav-item active">
-                            <a className="nav-link" href="/">Tentang</a>
-                        </li>
+                        
                         <li className="nav-item dropdown">
                             <a className="nav-link dropdown-toggle" data-toggle="dropdown" href="/" role="button" aria-haspopup="true" aria-expanded="false">Kompetisi</a>
                             <div className="dropdown-menu">                                
-                                <Link className="dropdown-item" to="/bidang" >Bidang </Link>
-                                <Link className="dropdown-item" to="/bidang" >Paduan </Link>
-                                <Link className="dropdown-item" to="/bidang" >Tahapan </Link>
-                                <Link className="dropdown-item" to="/bidang" >Persyaratan </Link>                              				  	  
+                                <Link className="dropdown-item" to="/bidang" >Bidang </Link>                             				  	  
                             </div>
                         </li>
 
                         <li className="nav-item">
-                            <a className="nav-link" href="/">Informasi Terbaru</a>
+                            <a className="nav-link" href="/#ped">Informasi Terbaru</a>
                         </li>  
                         <li className="nav-item">
-                            <a className="nav-link" href="/">Linimasa</a>
+                            <a className="nav-link" href="/#lin">Linimasa</a>
                         </li>
                         <li className="nav-item ">
-                            <Link className="nav-link masuk" to="/login">Masuk</Link>
+                            <a className="nav-link masuk" href="/login">Masuk</a>
                         </li>          
                     </ul>
                 </div>

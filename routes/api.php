@@ -15,6 +15,10 @@ use Illuminate\Support\Facades\Route;
 */
 // Import Controller
 use App\Http\Controllers\FrontCtrl;
+use App\Http\Controllers\FrontendController;
 
-Route::get('/informasi', [FrontCtrl::class, 'getDataInfo']);
+Route::get('/semua-informasi', [FrontendController::class, 'all_info']);
+Route::get('/informasi', [FrontendController::class, 'info']);
+Route::get('/linimasa', [FrontendController::class, 'linimasa']);
+Route::get('/informasi/{informasi}', [FrontendController::class, 'detail_info']);
 Route::get('/teaser', [FrontCtrl::class, 'getDataTeaser']);
