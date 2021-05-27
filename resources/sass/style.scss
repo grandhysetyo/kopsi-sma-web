@@ -425,6 +425,13 @@ section {
     background-size:contain;
     background-position: bottom;
     background-color: #fff;
+    .titleTimeline{
+        font-family: $montserrat-bold;
+        color: #845E28;
+    }
+    .txt-date{
+        font-family: $montserrat-med;
+    }
 }
 
 /* FOOTER */

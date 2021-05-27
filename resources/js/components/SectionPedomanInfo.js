@@ -68,7 +68,7 @@ export class SectionPedomanInfo extends Component {
                                     </div>                        
                                     <div className="row">
                                         { this.state.informasi.map((data,idx) => 
-                                            <div className={idx===0 ? "col-lg-12 d-block" : idx===1 ? "col-lg-12 d-none d-md-block d-lg-block d-xl-block" : "col-lg-12 d-none d-md-block d-lg-block d-xl-block"} key={data.info_id} id={'informasi-'+idx} data-aos="fade-up" data-aos-delay={6+idx+'00'}>
+                                            <div key={data.id} className={idx===0 ? "col-lg-12 d-block" : idx===1 ? "col-lg-12 d-none d-md-block d-lg-block d-xl-block" : "col-lg-12 d-none d-md-block d-lg-block d-xl-block"} id={'informasi-'+idx} data-aos="fade-up" data-aos-delay={6+idx+'00'}>
                                                 <a href="/" className="informasi">                                                      
                                                     <h5 className={idx === 0 ? "first-t" : idx===1 ? "second-t" : "third-t"}>{data.judul}</h5>
                                                     <span className={idx === 0 ? "first" : idx===1 ? "second" : "third"}>{data.tanggal}</span>                                                                       

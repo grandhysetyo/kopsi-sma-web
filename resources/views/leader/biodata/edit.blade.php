@@ -342,7 +342,7 @@
                             <div class="flex flex-col mb-4">
                                 <label for="name"
                                     class="mb-1 text-xs sm:text-sm tracking-wide text-gray-600">
-                                    Alamat Lengkap (Khusus Sekolah Indonesia Luar Negri)
+                                    Alamat Lengkap (*Khusus Sekolah Indonesia Luar Negri)
                                 </label>
                         
                                 <div class="relative">

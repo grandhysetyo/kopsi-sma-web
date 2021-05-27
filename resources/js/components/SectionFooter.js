@@ -15,13 +15,13 @@ const SectionFooter = () => {
                             <hr></hr>
                         </div>
                         <div className="col-lg-6 mx-auto text-center">
-                            <a href="/" className="fb-tw">
+                            <a href="https://twitter.com/puspresnas" className="fb-tw">
                                 <i className="fab fa-facebook-square"></i> <i className="fab fa-twitter"></i> Puspresnas
                             </a>
-                            <a href="/" className="yt">
+                            <a href="https://www.youtube.com/channel/UC-NYR136dYUJLsSiWRfLNKA" className="yt">
                                 <i className="fab fa-youtube"></i> Pusat Prestasi Nasional
                             </a>
-                            <a href="/" className="yt">
+                            <a href="https://www.instagram.com/puspresnas/" className="yt">
                                 <i className="fab fa-instagram"></i> @Puspresnas
                             </a>
                         </div>                                                             

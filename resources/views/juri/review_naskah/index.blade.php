@@ -16,7 +16,7 @@
                             <th data-priority="2">Tim</th>
                             <th data-priority="3">Sekolah</th>
                             <th data-priority="4">Provinsi</th>
-                            <th data-priority="5">Sub Bidang</th>
+                            <th data-priority="5">Subbidang</th>
                             <th data-priority="6">Bidang</th>
                             <th data-priority="7">Nilai</th>
                             <th data-priority="8">Status</th>

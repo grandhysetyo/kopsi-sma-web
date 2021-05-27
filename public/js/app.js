@@ -2305,7 +2305,7 @@ var SectionFooter = function SectionFooter() {
           }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("div", {
             className: "col-lg-6 mx-auto text-center",
             children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("a", {
-              href: "/",
+              href: "https://twitter.com/puspresnas",
               className: "fb-tw",
               children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("i", {
                 className: "fab fa-facebook-square"
@@ -2313,13 +2313,13 @@ var SectionFooter = function SectionFooter() {
                 className: "fab fa-twitter"
               }), " Puspresnas"]
             }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("a", {
-              href: "/",
+              href: "https://www.youtube.com/channel/UC-NYR136dYUJLsSiWRfLNKA",
               className: "yt",
               children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("i", {
                 className: "fab fa-youtube"
               }), " Pusat Prestasi Nasional"]
             }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("a", {
-              href: "/",
+              href: "https://www.instagram.com/puspresnas/",
               className: "yt",
               children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("i", {
                 className: "fab fa-instagram"
@@ -2353,7 +2353,6 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
-
 var SectionIntro = function SectionIntro() {
   return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("section", {
     className: "intro",
@@ -2371,10 +2370,32 @@ var SectionIntro = function SectionIntro() {
             href: "/login",
             className: "btn-masuk",
             children: " Masuk "
-          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("a", {
-            href: "/login",
-            className: "btn-daftar",
-            children: " Daftar"
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("div", {
+            className: "dropdown",
+            style: {
+              display: 'inline-block'
+            },
+            children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("button", {
+              className: "btn btn-daftar dropdown-toggle",
+              type: "button",
+              id: "dropdownMenuButton",
+              "data-toggle": "dropdown",
+              "aria-haspopup": "true",
+              "aria-expanded": "false",
+              children: "Daftar"
+            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("div", {
+              className: "dropdown-menu",
+              "aria-labelledby": "dropdownMenuButton",
+              children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("a", {
+                className: "dropdown-item",
+                href: "/leader-register",
+                children: "Leader"
+              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("a", {
+                className: "dropdown-item",
+                href: "/member-register",
+                children: "Member"
+              })]
+            })]
           })]
         }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("div", {
           className: "col-lg-6 align-self-center",
@@ -2577,7 +2598,7 @@ var SectionPedomanInfo = /*#__PURE__*/function (_Component) {
                               children: data.content
                             })]
                           })
-                        }, data.info_id);
+                        }, data.id);
                       }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("div", {
                         className: "col-lg-12",
                         children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("a", {
@@ -2702,154 +2723,169 @@ var SectionTeaser = function SectionTeaser() {
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "SectionTimeline": () => (/* binding */ SectionTimeline),
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
-/* harmony import */ var swiper_react__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! swiper/react */ "./node_modules/swiper/esm/react/swiper.js");
-/* harmony import */ var swiper_react__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! swiper/react */ "./node_modules/swiper/esm/react/swiper-slide.js");
-/* harmony import */ var swiper_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! swiper/core */ "./node_modules/swiper/esm/components/core/core-class.js");
-/* harmony import */ var swiper_core__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! swiper/core */ "./node_modules/swiper/esm/components/pagination/pagination.js");
-/* harmony import */ var _css_SectionTimeline_css__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../css/SectionTimeline.css */ "./resources/css/SectionTimeline.css");
-/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
+/* harmony import */ var swiper_react__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! swiper/react */ "./node_modules/swiper/esm/react/swiper.js");
+/* harmony import */ var swiper_react__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! swiper/react */ "./node_modules/swiper/esm/react/swiper-slide.js");
+/* harmony import */ var swiper_core__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! swiper/core */ "./node_modules/swiper/esm/components/core/core-class.js");
+/* harmony import */ var swiper_core__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! swiper/core */ "./node_modules/swiper/esm/components/pagination/pagination.js");
+/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! axios */ "./node_modules/axios/index.js");
+/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(axios__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var _api_request_api__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../api/request_api */ "./resources/js/api/request_api.js");
+/* harmony import */ var _css_SectionTimeline_css__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../../css/SectionTimeline.css */ "./resources/css/SectionTimeline.css");
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
+function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
+
+function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function"); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, writable: true, configurable: true } }); if (superClass) _setPrototypeOf(subClass, superClass); }
+
+function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || function _setPrototypeOf(o, p) { o.__proto__ = p; return o; }; return _setPrototypeOf(o, p); }
+
+function _createSuper(Derived) { var hasNativeReflectConstruct = _isNativeReflectConstruct(); return function _createSuperInternal() { var Super = _getPrototypeOf(Derived), result; if (hasNativeReflectConstruct) { var NewTarget = _getPrototypeOf(this).constructor; result = Reflect.construct(Super, arguments, NewTarget); } else { result = Super.apply(this, arguments); } return _possibleConstructorReturn(this, result); }; }
+
+function _possibleConstructorReturn(self, call) { if (call && (_typeof(call) === "object" || typeof call === "function")) { return call; } return _assertThisInitialized(self); }
+
+function _assertThisInitialized(self) { if (self === void 0) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return self; }
+
+function _isNativeReflectConstruct() { if (typeof Reflect === "undefined" || !Reflect.construct) return false; if (Reflect.construct.sham) return false; if (typeof Proxy === "function") return true; try { Boolean.prototype.valueOf.call(Reflect.construct(Boolean, [], function () {})); return true; } catch (e) { return false; } }
+
+function _getPrototypeOf(o) { _getPrototypeOf = Object.setPrototypeOf ? Object.getPrototypeOf : function _getPrototypeOf(o) { return o.__proto__ || Object.getPrototypeOf(o); }; return _getPrototypeOf(o); }
+
+function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
+
+
 
 
  // use Swiper modules
 
-swiper_core__WEBPACK_IMPORTED_MODULE_1__.default.use([swiper_core__WEBPACK_IMPORTED_MODULE_2__.default]); // import style timeline
+swiper_core__WEBPACK_IMPORTED_MODULE_3__.default.use([swiper_core__WEBPACK_IMPORTED_MODULE_4__.default]); // import style timeline
 
 
 
 
 
 
-var SectionTimeline = function SectionTimeline() {
-  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.Fragment, {
-    children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("section", {
-      className: "timeline",
-      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("div", {
-        className: "container h-100",
-        children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("div", {
-          className: "row h-100",
-          children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)("div", {
-            className: "col-lg-12 align-self-center",
-            id: "timeline",
-            "data-aos": "zoom-in-up",
-            "data-aos-delay": "350",
-            children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("div", {
-              className: "row",
-              children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("div", {
-                className: "col-lg-4 mx-auto",
-                children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("h3", {
-                  className: "title-section3",
-                  children: "TIMELINE KoPSi 2021"
-                })
+var SectionTimeline = /*#__PURE__*/function (_Component) {
+  _inherits(SectionTimeline, _Component);
+
+  var _super = _createSuper(SectionTimeline);
+
+  function SectionTimeline(props) {
+    var _this;
+
+    _classCallCheck(this, SectionTimeline);
+
+    _this = _super.call(this, props);
+
+    _defineProperty(_assertThisInitialized(_this), "getDataTimeline", function () {
+      axios__WEBPACK_IMPORTED_MODULE_1___default().get(_api_request_api__WEBPACK_IMPORTED_MODULE_2__.default.fetchTimeline).then(function (res) {
+        _this.setState({
+          timeline: res.data
+        });
+      })["catch"](function (error) {
+        // handle error
+        console.log(error);
+      });
+    });
+
+    _this.state = {
+      timeline: []
+    };
+    return _this;
+  }
+
+  _createClass(SectionTimeline, [{
+    key: "componentDidMount",
+    value: function componentDidMount() {
+      this.getDataTimeline();
+    }
+  }, {
+    key: "render",
+    value: function render() {
+      return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.Fragment, {
+        children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)("section", {
+          className: "timeline",
+          children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)("div", {
+            className: "container h-100",
+            children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)("div", {
+              className: "row h-100",
+              children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsxs)("div", {
+                className: "col-lg-12 align-self-center",
+                id: "timeline",
+                "data-aos": "zoom-in-up",
+                "data-aos-delay": "350",
+                children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)("div", {
+                  className: "row",
+                  children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)("div", {
+                    className: "col-lg-4 mx-auto",
+                    children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)("h3", {
+                      className: "title-section3",
+                      children: "TIMELINE KoPSi 2021"
+                    })
+                  })
+                }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)("div", {
+                  className: "row",
+                  children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)("div", {
+                    className: "col-lg-12 ",
+                    children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)(swiper_react__WEBPACK_IMPORTED_MODULE_7__.Swiper, {
+                      slidesPerView: '1',
+                      centeredSlides: false,
+                      grabCursor: true,
+                      pagination: {
+                        "clickable": true
+                      },
+                      breakpoints: {
+                        "640": {
+                          "slidesPerView": 1
+                        },
+                        "768": {
+                          "slidesPerView": 2
+                        },
+                        "1024": {
+                          "slidesPerView": 4
+                        }
+                      },
+                      className: "tl",
+                      children: this.state.timeline.map(function (data, idx) {
+                        return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)(swiper_react__WEBPACK_IMPORTED_MODULE_8__.SwiperSlide, {
+                          children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)("div", {
+                            className: idx % 2 == 0 ? 'tl-up' : 'tl-down',
+                            children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsxs)("div", {
+                              className: "content",
+                              children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)("h4", {
+                                className: "titleTimeline",
+                                children: data.title
+                              }), data.tanggal.map(function (res) {
+                                return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsxs)("span", {
+                                  className: "txt-date d-block",
+                                  children: [res.title, " | ", res.tanggal]
+                                }, res.id);
+                              })]
+                            })
+                          })
+                        }, data.id);
+                      })
+                    })
+                  })
+                })]
               })
-            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("div", {
-              className: "row",
-              children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("div", {
-                className: "col-lg-12 ",
-                children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)(swiper_react__WEBPACK_IMPORTED_MODULE_5__.Swiper, {
-                  slidesPerView: '1',
-                  centeredSlides: false,
-                  grabCursor: true,
-                  pagination: {
-                    "clickable": true
-                  },
-                  breakpoints: {
-                    "640": {
-                      "slidesPerView": 1
-                    },
-                    "768": {
-                      "slidesPerView": 2
-                    },
-                    "1024": {
-                      "slidesPerView": 4
-                    }
-                  },
-                  className: "tl",
-                  children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(swiper_react__WEBPACK_IMPORTED_MODULE_6__.SwiperSlide, {
-                    children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("div", {
-                      className: "tl-up",
-                      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)("div", {
-                        className: "content",
-                        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("h4", {
-                          children: "Time"
-                        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("p", {
-                          children: "lorem ipsum dolor siit amet dulur e dewe loem si"
-                        })]
-                      })
-                    })
-                  }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(swiper_react__WEBPACK_IMPORTED_MODULE_6__.SwiperSlide, {
-                    children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("div", {
-                      className: "tl-down",
-                      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)("div", {
-                        className: "content",
-                        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("h4", {
-                          children: "Time"
-                        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("p", {
-                          children: "lorem ipsum dolor siit amet dulur e dewe loem si"
-                        })]
-                      })
-                    })
-                  }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(swiper_react__WEBPACK_IMPORTED_MODULE_6__.SwiperSlide, {
-                    children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("div", {
-                      className: "tl-up",
-                      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)("div", {
-                        className: "content",
-                        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("h4", {
-                          children: "Time"
-                        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("p", {
-                          children: "lorem ipsum dolor siit amet dulur e dewe loem si lorem ipsum dolor siit amet dulur e dewe loem si lorem ipsum dolor siit amet dulur e dewe loem si"
-                        })]
-                      })
-                    })
-                  }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(swiper_react__WEBPACK_IMPORTED_MODULE_6__.SwiperSlide, {
-                    children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("div", {
-                      className: "tl-down",
-                      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)("div", {
-                        className: "content",
-                        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("h4", {
-                          children: "Time"
-                        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("p", {
-                          children: "lorem ipsum dolor siit amet dulur e dewe loem si"
-                        })]
-                      })
-                    })
-                  }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(swiper_react__WEBPACK_IMPORTED_MODULE_6__.SwiperSlide, {
-                    children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("div", {
-                      className: "tl-up",
-                      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)("div", {
-                        className: "content",
-                        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("h4", {
-                          children: "Time"
-                        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("p", {
-                          children: "lorem ipsum dolor siit amet dulur e dewe loem si lorem ipsum dolor siit amet dulur e dewe loem si lorem ipsum dolor siit amet dulur e dewe loem si"
-                        })]
-                      })
-                    })
-                  }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(swiper_react__WEBPACK_IMPORTED_MODULE_6__.SwiperSlide, {
-                    children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("div", {
-                      className: "tl-down",
-                      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)("div", {
-                        className: "content",
-                        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("h4", {
-                          children: "Time"
-                        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("p", {
-                          children: "lorem ipsum dolor siit amet dulur e dewe loem si"
-                        })]
-                      })
-                    })
-                  })]
-                })
-              })
-            })]
+            })
           })
         })
-      })
-    })
-  });
-};
+      });
+    }
+  }]);
 
+  return SectionTimeline;
+}(react__WEBPACK_IMPORTED_MODULE_0__.Component);
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (SectionTimeline);
 
 /***/ }),
@@ -7957,7 +7993,7 @@ __webpack_require__.r(__webpack_exports__);
 
 var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default()(function(i){return i[1]});
 // Module
-___CSS_LOADER_EXPORT___.push([module.id, ".tl .swiper-slide{\n  background-color: transparent;\n}\n.tl-up{  \n  height: 400px;\n}\n\n.tl-up .content{\n  height: 120px;\n  border-left: solid 2px #A96411;\n  position: relative;\n  top: 10%;\n  padding-left: 16px;\n}\n.tl-up::before{\n  content: \"\";\n  width: 18px;\n  height: 18px;  \n  background-color: #fff;\n  border: 1px solid #A96411;\n  border-radius: 50%;\n  position: absolute;\n  top: 48.5%;\n  z-index: 1;\n}\n.tl-up::after{\n  content: '';\n  width: 100%;\n  height: 2px;\n  background-color: #A96411;\n  /* z-index: 1; */\n  position: absolute;\n  top: 50%;\n}\n\n.tl-down{    \n  height: 400px;\n}\n\n.tl-down .content{\n  height: 120px;\n  border-left: solid 2px #A96411;\n  position: relative;\n  top: 60%;\n  padding-left: 16px;\n}\n.tl-down::before{\n  content: \"\";\n  width: 18px;\n  height: 18px;\n  background-color: #fff;\n  border: 1px solid #A96411;\n  border-radius: 50%;\n  position: absolute;\n  top: 48.5%;\n  z-index: 1;\n}\n.tl-down::after{\n  content: '';\n  width: 100%;\n  height: 2px;\n  background-color: #A96411;\n  /* z-index: 1; */\n  position: absolute;\n  top: 50%;\n}", ""]);
+___CSS_LOADER_EXPORT___.push([module.id, ".tl .swiper-slide{\r\n  background-color: transparent;\r\n}\r\n.tl-up{  \r\n  height: 400px;\r\n}\r\n\r\n.tl-up .content{\r\n  height: 120px;\r\n  border-left: solid 2px #A96411;\r\n  position: relative;\r\n  top: 10%;\r\n  padding-left: 16px;\r\n}\r\n.tl-up::before{\r\n  content: \"\";\r\n  width: 18px;\r\n  height: 18px;  \r\n  background-color: #fff;\r\n  border: 1px solid #A96411;\r\n  border-radius: 50%;\r\n  position: absolute;\r\n  top: 48.5%;\r\n  z-index: 1;\r\n}\r\n.tl-up::after{\r\n  content: '';\r\n  width: 100%;\r\n  height: 2px;\r\n  background-color: #A96411;\r\n  /* z-index: 1; */\r\n  position: absolute;\r\n  top: 50%;\r\n}\r\n\r\n.tl-down{    \r\n  height: 400px;\r\n}\r\n\r\n.tl-down .content{\r\n  height: 120px;\r\n  border-left: solid 2px #A96411;\r\n  position: relative;\r\n  top: 60%;\r\n  padding-left: 16px;\r\n}\r\n.tl-down::before{\r\n  content: \"\";\r\n  width: 18px;\r\n  height: 18px;\r\n  background-color: #fff;\r\n  border: 1px solid #A96411;\r\n  border-radius: 50%;\r\n  position: absolute;\r\n  top: 48.5%;\r\n  z-index: 1;\r\n}\r\n.tl-down::after{\r\n  content: '';\r\n  width: 100%;\r\n  height: 2px;\r\n  background-color: #A96411;\r\n  /* z-index: 1; */\r\n  position: absolute;\r\n  top: 50%;\r\n}", ""]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
@@ -8005,7 +8041,7 @@ __webpack_require__.r(__webpack_exports__);
 
 var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default()(function(i){return i[1]});
 // Module
-___CSS_LOADER_EXPORT___.push([module.id, "#root {\n  height: 100%;\n}\n\nhtml,\nbody {\n  position: relative;\n  height: 100%;\n}\n\nbody {\n  background: #eee;\n  font-size: 14px;\n  color: #000;\n  margin: 0;\n  padding: 0;\n}\n\nsection {\n  width: 100%;\n  height: 100%;\n}\n\n.swiper-container {\n  width: 100%;\n  height: 100%;\n  z-index: 0;\n}\n\n.swiper-slide {\n  background: #fff;\n  /* Center slide text vertically */\n  display: flex;\n  justify-content: center;\n  align-items: center;\n}\n\n.swiper-pagination-bullet {\n  opacity: 0.8 !important;\n  background: #fff !important;\n}\n\n.swiper-pagination-bullet-active {\n  background: #184e96 !important;\n}\n\n/* .swiper-slide img {\n  display: block;\n  width: 100%;\n  height: 100%;\n  object-fit: cover;\n} */\n.navbar {\n  position: fixed !important;\n  width: 100%;\n  z-index: 2;\n}\n\n/* light nav */\n.navbar-light .nav-link {\n  width: -webkit-fit-content;\n  width: -moz-fit-content;\n  width: fit-content;\n  color: #1A5C6B !important;\n  padding-top: 5px;\n  padding-bottom: 5px;\n  padding-right: 15px !important;\n  padding-left: 15px !important;\n  margin-right: 5px;\n  border-radius: 20px;\n  font-family: \"Myriad Pro Regular\";\n  font-size: 16px;\n  font-weight: 500;\n}\n\n.navbar-light .nav-link:hover {\n  color: #fff !important;\n  background-color: #1A5C6B;\n}\n\n.navbar-light .nav-link:active {\n  color: #fff !important;\n  background-color: #1A5C6B;\n  font-family: \"Myriad Pro Bold\";\n}\n\n.navbar-light .nav-link.masuk {\n  color: #fff !important;\n  background-color: #1A5C6B;\n  font-family: \"Myriad Pro Bold\";\n}\n\n/* dark nav */\n.navbar-dark .nav-link {\n  width: -webkit-fit-content;\n  width: -moz-fit-content;\n  width: fit-content;\n  color: #fff !important;\n  padding-top: 5px;\n  padding-bottom: 5px;\n  padding-right: 15px !important;\n  padding-left: 15px !important;\n  margin-right: 5px;\n  border-radius: 20px;\n  font-family: \"Myriad Pro Regular\";\n  font-size: 16px;\n  font-weight: 500;\n}\n\n.navbar-dark .nav-link:hover {\n  color: #1A5C6B !important;\n  background-color: #fff;\n}\n\n.navbar-dark .nav-link:active {\n  color: #1A5C6B !important;\n  background-color: #fff;\n  font-family: \"Myriad Pro Bold\";\n}\n\n.navbar-dark .nav-link.masuk {\n  color: #1A5C6B !important;\n  background-color: #fff;\n  font-family: \"Myriad Pro Bold\";\n}\n\n.navbar-brand .logo {\n  width: 150px;\n}\n\n.navbar-brand-txt {\n  width: 20%;\n  display: inline-block;\n  padding-top: 0.3125rem;\n  padding-bottom: 0.3125rem;\n  margin-right: 1rem;\n  font-family: \"Abject Failure\";\n  line-height: 18px;\n  font-size: 14px;\n  white-space: nowrap;\n}\n\n.txt-blue {\n  color: #1D76BB;\n}\n\n.navbar-light .collapse.show {\n  background-color: #fff;\n  padding: 20px;\n  border-radius: 12px;\n}\n\n.navbar-dark .collapse.show {\n  background-color: #1A5C6B;\n  padding: 20px;\n  border-radius: 12px;\n}\n\n.title-section {\n  color: #1B478E;\n  margin-bottom: 50px;\n  text-align: center;\n  font-family: \"Myriad Pro Bold\";\n}\n\n.title-section2 {\n  color: #fff;\n  margin-bottom: 50px;\n  text-shadow: 0px 4px #0071BC;\n  text-align: center;\n  font-family: \"Myriad Pro Bold\";\n}\n\n.title-section3 {\n  color: #845E28;\n  margin-bottom: 50px;\n  text-shadow: 0px 2px #4444441a;\n  text-align: center;\n  font-family: \"Myriad Pro Bold\";\n}\n\n.link-white {\n  margin-top: 10px;\n  color: #fff;\n}\n\n.link-white:hover {\n  color: #fff;\n}\n\n/* INTRO */\n.intro {\n  background-image: url(\"/assets/images/bg-section.png\");\n  background-repeat: no-repeat;\n  background-size: cover;\n  background-color: #1B75BB;\n}\n\n.intro h1 {\n  color: #fff;\n  margin-bottom: 50px;\n  text-shadow: 0px 2px #444444;\n  font-family: \"Montserrat Bold\";\n}\n\n.intro .hero {\n  width: 100%;\n  margin: auto;\n}\n\n.btn-masuk {\n  padding: 12px 40px;\n  background-color: #D6DE23;\n  color: #603813;\n  margin-right: 30px;\n  border-radius: 20px;\n  font-family: \"Montserrat Medium\";\n  font-size: 18px;\n  font-weight: 600;\n}\n\n.btn-masuk:hover {\n  color: #603813;\n  background-color: #D6DE23;\n  text-decoration: none;\n}\n\n.btn-daftar {\n  padding: 12px 40px;\n  background-color: #FFDD15;\n  color: #603813;\n  margin-right: 30px;\n  border-radius: 20px;\n  font-family: \"Montserrat Medium\";\n  font-size: 18px;\n  font-weight: 600;\n}\n\n.btn-daftar:hover {\n  color: #603813;\n  background-color: #FFDD15;\n  text-decoration: none;\n}\n\n/* BIDANG */\n.bidang {\n  background-image: url(\"/assets/images/bg-section.png\");\n  background-repeat: no-repeat;\n  background-size: cover;\n  background-color: #fff;\n}\n\n.bidang img {\n  width: 100%;\n}\n\n.btn-bidang {\n  display: block;\n  padding: 2px 63px;\n  background-color: #fff;\n  color: #000;\n  border-radius: 30px;\n  font-size: 18px;\n  font-family: \"Montserrat Medium\";\n  font-weight: 600;\n  text-align: center;\n  transition: 0.3s;\n}\n\n.btn-bidang:hover {\n  text-decoration: none;\n}\n\n.mst {\n  color: #143A72;\n}\n\n.mst:hover {\n  background-color: #143A72;\n  color: #fff;\n}\n\n.ftr {\n  color: #604417;\n}\n\n.ftr:hover {\n  background-color: #604417;\n  color: #fff;\n}\n\n.ish {\n  color: #197222;\n}\n\n.ish:hover {\n  background-color: #197222;\n  color: #fff;\n}\n\n/* PEDOMAN INFORMASI */\n.pedoman {\n  background-color: #fff;\n}\n\n.info {\n  background-color: #8BC53F;\n}\n\n.informasi {\n  display: block;\n  background-color: #fff;\n  padding: 7px 16px;\n  margin: 5px 24px;\n  border-radius: 8px;\n}\n\n.informasi:hover {\n  background-color: whitesmoke;\n  transition: 0.3s;\n  text-decoration: none;\n}\n\n.informasi span {\n  position: absolute;\n  top: 10px;\n  right: 38px;\n  color: #fff;\n  padding: 2px 20px;\n  font-size: 14px;\n  border-top-left-radius: 4px;\n  border-bottom-left-radius: 4px;\n  font-family: \"Montserrat Medium\";\n  font-weight: 600;\n}\n\n.informasi h5 {\n  font-family: \"Montserrat Medium\";\n  font-weight: 600;\n}\n\n.informasi .first {\n  background-color: #2F62AD;\n}\n\n.informasi .second {\n  background-color: #1F8C2C;\n}\n\n.informasi .third {\n  background-color: #FAAF40;\n}\n\n.first-t {\n  color: #2F62AD;\n}\n\n.second-t {\n  color: #1F8C2C;\n}\n\n.third-t {\n  color: #845E28;\n}\n\n.informasi p {\n  font-size: 14px;\n  color: #444444;\n  font-family: \"Montserrat Regular\";\n}\n\n.pedoman .hero {\n  width: 35%;\n  display: block;\n  margin: auto;\n}\n\n.btn-pedoman {\n  display: block;\n  width: 70%;\n  margin: auto;\n  background-color: #2F62AD;\n  text-align: center;\n  color: #fff;\n  padding: 16px 0;\n  border-radius: 30px;\n  box-shadow: 2px 3px 5px #888888;\n  font-family: \"Montserrat Bold\";\n  font-size: 18px;\n}\n\n.btn-pedoman:hover {\n  text-decoration: none;\n  background-color: #09242c;\n  color: #fff;\n  transition: 0.3s;\n}\n\n/* TEASER */\n.teaser {\n  background-image: url(\"/assets/images/bg-section.png\");\n  background-repeat: no-repeat;\n  background-size: cover;\n  background-color: #FAAF40;\n}\n\n.teaser iframe {\n  margin-left: auto;\n  margin-right: auto;\n  width: 100%;\n  height: 400px;\n  z-index: 1;\n}\n\n.teaser .hero1 {\n  position: absolute;\n  left: 6%;\n  bottom: 27%;\n  width: 18%;\n  z-index: 0;\n}\n\n.teaser .hero2 {\n  position: absolute;\n  right: 4%;\n  bottom: 0;\n  width: 20%;\n  z-index: 0;\n}\n\n.teaser .hero3 {\n  position: absolute;\n  right: 2%;\n  bottom: 30%;\n  width: 24%;\n  z-index: 0;\n}\n\n.teaser .sky {\n  position: absolute;\n  right: 0;\n  bottom: 0;\n  width: 100%;\n  height: 62vh;\n  z-index: 0;\n  -o-object-fit: cover;\n     object-fit: cover;\n  -o-object-position: top;\n     object-position: top;\n}\n\n.teaser .text {\n  position: absolute;\n  left: 10%;\n  bottom: 0;\n  width: 20%;\n  z-index: 0;\n}\n\n/* TIMELINE */\n.timeline {\n  background-image: url(\"/assets/images/bg-timeline.png\");\n  background-repeat: no-repeat;\n  background-size: contain;\n  background-position: bottom;\n  background-color: #fff;\n}\n\n/* FOOTER */\n.footer {\n  background-image: url(\"/assets/images/bg-section.png\");\n  background-repeat: no-repeat;\n  background-size: cover;\n  background-position: bottom;\n  background-color: #fff;\n}\n\n.footer .logo {\n  width: 100%;\n}\n\n.footer i {\n  margin-right: 8px;\n}\n\n.footer a {\n  color: #0E8BCC;\n  margin-right: 14px;\n  font-family: \"Montserrat Medium\";\n  font-weight: 600;\n}\n\n.footer a:hover {\n  text-decoration: none;\n}\n\n.footer .loop {\n  position: absolute;\n  right: 0;\n  bottom: 0;\n  width: 100%;\n  height: 60vh;\n  z-index: 0;\n  -o-object-fit: cover;\n     object-fit: cover;\n  -o-object-position: top;\n     object-position: top;\n}\n\n.footer .alamat {\n  color: #666666;\n  font-family: \"Montserrat Medium\";\n  font-weight: 600;\n}\n\n/* LOGIN */\n.login {\n  background-image: url(\"/assets/images/bg-section.png\");\n  background-repeat: no-repeat;\n  background-size: cover;\n  background-position: center;\n  padding-top: 15%;\n  background-color: #ffffff;\n}\n\n.login .sky {\n  position: absolute;\n  top: 0;\n  width: 100%;\n  z-index: 0;\n  -o-object-fit: cover;\n     object-fit: cover;\n  -o-object-position: top;\n     object-position: top;\n}\n\n.form-login {\n  background-color: #F2F2F2;\n  padding: 35px;\n  border-radius: 12px;\n  color: #1277BD;\n}\n\n.form-group label {\n  font-family: \"Montserrat Bold\";\n}\n\n.form-login .form-control {\n  border-radius: 1.25rem !important;\n}\n\n.form-login .text-muted {\n  margin-bottom: 8px;\n}\n\n.btn-me {\n  width: 100%;\n  display: block;\n  text-align: center;\n  border: none;\n  margin: 18px 0;\n}\n\n/* Responsive */\n/* Extra small devices (portrait phones, less than 576px) */\n@media (max-width: 575.98px) {\n  section {\n    padding-top: 100px;\n  }\n\n  .title-section {\n    font-size: 20px;\n    margin-bottom: 12px;\n  }\n\n  .title-section2 {\n    margin-bottom: 10px;\n  }\n\n  /* INTRO */\n  .intro h1 {\n    margin-top: 35px;\n    font-size: 30px;\n  }\n\n  .intro .hero {\n    width: 80%;\n    margin: auto;\n  }\n\n  /* BIDANG */\n  .bidang img {\n    display: block;\n    width: 35%;\n    margin-left: auto;\n    margin-right: auto;\n  }\n\n  .btn-bidang {\n    padding: 4px 8px;\n    font-size: 14px;\n    width: -webkit-fit-content;\n    width: -moz-fit-content;\n    width: fit-content;\n    margin: auto;\n    margin-bottom: 20px;\n  }\n\n  /* PEDOMAN INFO */\n  .pedoman .hero {\n    width: 35%;\n  }\n\n  .btn-pedoman {\n    width: 70%;\n    font-size: 14px;\n    padding: 7px 0;\n    margin-bottom: 10px;\n  }\n\n  .informasi {\n    margin: 5px 0;\n  }\n\n  .informasi span {\n    position: sticky;\n    color: #fff;\n    padding: 2px 20px;\n    font-size: 14px;\n  }\n\n  /* TEASER */\n  .teaser {\n    padding-top: 0;\n  }\n\n  .teaser iframe {\n    margin-left: auto;\n    margin-right: auto;\n    width: 100%;\n    height: 250px;\n  }\n\n  .teaser .hero1, .teaser .hero2 {\n    width: 200px;\n    z-index: 0;\n  }\n\n  /* BIDANG DETAIL */\n  .bidang-detail {\n    padding-top: 28%;\n  }\n\n  .footer {\n    padding-top: 0;\n  }\n}\n/* Small devices (landscape phones, 576px and up) */\n@media (min-width: 576px) and (max-width: 767.98px) {\n  section {\n    padding-top: 100px;\n  }\n\n  .title-section {\n    font-size: 20px;\n    margin-bottom: 12px;\n  }\n\n  /* INTRO */\n  .intro h1 {\n    margin-top: 35px;\n    font-size: 30px;\n  }\n\n  .intro .hero {\n    width: 60%;\n    margin: auto;\n  }\n\n  /* BIDANG */\n  .bidang img {\n    display: block;\n    width: 100%;\n    margin-left: auto;\n    margin-right: auto;\n  }\n\n  .btn-bidang {\n    padding: 4px 8px;\n    font-size: 14px;\n    width: -webkit-fit-content;\n    width: -moz-fit-content;\n    width: fit-content;\n    margin: auto;\n    margin-bottom: 20px;\n  }\n\n  /* PEDOMAN INFO */\n  .pedoman .hero {\n    width: 45%;\n  }\n\n  .btn-pedoman {\n    width: 70%;\n    font-size: 14px;\n    padding: 7px 0;\n    margin-bottom: 10px;\n  }\n\n  .informasi {\n    margin: 5px 0;\n  }\n\n  /* TEASER */\n  .teaser {\n    padding-top: 0;\n  }\n}\n/* Medium devices (tablets, 768px and up) */\n@media (min-width: 768px) and (max-width: 991.98px) {\n  section {\n    padding-top: 100px;\n  }\n\n  /* BIDANG */\n  .btn-bidang {\n    padding: 4px 30px;\n    font-size: 14px;\n    width: -webkit-fit-content;\n    width: -moz-fit-content;\n    width: fit-content;\n    margin: auto;\n    margin-bottom: 20px;\n  }\n\n  /* PEEDOMAN INFORMASI */\n  .pedoman {\n    height: 50%;\n  }\n\n  .info {\n    height: 50%;\n  }\n\n  /* PEDOMAN INFO */\n  .pedoman .hero {\n    width: 45%;\n  }\n\n  .btn-pedoman {\n    width: 70%;\n    font-size: 14px;\n    padding: 7px 0;\n    margin-bottom: 10px;\n  }\n\n  .informasi {\n    margin: 5px 0;\n  }\n}\n/* Large devices (desktops, 992px and up) */\n/* Extra large devices (large desktops, 1200px and up) */", ""]);
+___CSS_LOADER_EXPORT___.push([module.id, "#root {\n  height: 100%;\n}\n\nhtml,\nbody {\n  position: relative;\n  height: 100%;\n}\n\nbody {\n  background: #eee;\n  font-size: 14px;\n  color: #000;\n  margin: 0;\n  padding: 0;\n}\n\nsection {\n  width: 100%;\n  height: 100%;\n}\n\n.swiper-container {\n  width: 100%;\n  height: 100%;\n  z-index: 0;\n}\n\n.swiper-slide {\n  background: #fff;\n  /* Center slide text vertically */\n  display: flex;\n  justify-content: center;\n  align-items: center;\n}\n\n.swiper-pagination-bullet {\n  opacity: 0.8 !important;\n  background: #fff !important;\n}\n\n.swiper-pagination-bullet-active {\n  background: #184e96 !important;\n}\n\n/* .swiper-slide img {\n  display: block;\n  width: 100%;\n  height: 100%;\n  object-fit: cover;\n} */\n.navbar {\n  position: fixed !important;\n  width: 100%;\n  z-index: 2;\n}\n\n/* light nav */\n.navbar-light .nav-link {\n  width: -webkit-fit-content;\n  width: -moz-fit-content;\n  width: fit-content;\n  color: #1A5C6B !important;\n  padding-top: 5px;\n  padding-bottom: 5px;\n  padding-right: 15px !important;\n  padding-left: 15px !important;\n  margin-right: 5px;\n  border-radius: 20px;\n  font-family: \"Myriad Pro Regular\";\n  font-size: 16px;\n  font-weight: 500;\n}\n\n.navbar-light .nav-link:hover {\n  color: #fff !important;\n  background-color: #1A5C6B;\n}\n\n.navbar-light .nav-link:active {\n  color: #fff !important;\n  background-color: #1A5C6B;\n  font-family: \"Myriad Pro Bold\";\n}\n\n.navbar-light .nav-link.masuk {\n  color: #fff !important;\n  background-color: #1A5C6B;\n  font-family: \"Myriad Pro Bold\";\n}\n\n/* dark nav */\n.navbar-dark .nav-link {\n  width: -webkit-fit-content;\n  width: -moz-fit-content;\n  width: fit-content;\n  color: #fff !important;\n  padding-top: 5px;\n  padding-bottom: 5px;\n  padding-right: 15px !important;\n  padding-left: 15px !important;\n  margin-right: 5px;\n  border-radius: 20px;\n  font-family: \"Myriad Pro Regular\";\n  font-size: 16px;\n  font-weight: 500;\n}\n\n.navbar-dark .nav-link:hover {\n  color: #1A5C6B !important;\n  background-color: #fff;\n}\n\n.navbar-dark .nav-link:active {\n  color: #1A5C6B !important;\n  background-color: #fff;\n  font-family: \"Myriad Pro Bold\";\n}\n\n.navbar-dark .nav-link.masuk {\n  color: #1A5C6B !important;\n  background-color: #fff;\n  font-family: \"Myriad Pro Bold\";\n}\n\n.navbar-brand .logo {\n  width: 150px;\n}\n\n.navbar-brand-txt {\n  width: 20%;\n  display: inline-block;\n  padding-top: 0.3125rem;\n  padding-bottom: 0.3125rem;\n  margin-right: 1rem;\n  font-family: \"Abject Failure\";\n  line-height: 18px;\n  font-size: 14px;\n  white-space: nowrap;\n}\n\n.txt-blue {\n  color: #1D76BB;\n}\n\n.navbar-light .collapse.show {\n  background-color: #fff;\n  padding: 20px;\n  border-radius: 12px;\n}\n\n.navbar-dark .collapse.show {\n  background-color: #1A5C6B;\n  padding: 20px;\n  border-radius: 12px;\n}\n\n.title-section {\n  color: #1B478E;\n  margin-bottom: 50px;\n  text-align: center;\n  font-family: \"Myriad Pro Bold\";\n}\n\n.title-section2 {\n  color: #fff;\n  margin-bottom: 50px;\n  text-shadow: 0px 4px #0071BC;\n  text-align: center;\n  font-family: \"Myriad Pro Bold\";\n}\n\n.title-section3 {\n  color: #845E28;\n  margin-bottom: 50px;\n  text-shadow: 0px 2px #4444441a;\n  text-align: center;\n  font-family: \"Myriad Pro Bold\";\n}\n\n.link-white {\n  margin-top: 10px;\n  color: #fff;\n}\n\n.link-white:hover {\n  color: #fff;\n}\n\n/* INTRO */\n.intro {\n  background-image: url(\"/assets/images/bg-section.png\");\n  background-repeat: no-repeat;\n  background-size: cover;\n  background-color: #1B75BB;\n}\n\n.intro h1 {\n  color: #fff;\n  margin-bottom: 50px;\n  text-shadow: 0px 2px #444444;\n  font-family: \"Montserrat Bold\";\n}\n\n.intro .hero {\n  width: 100%;\n  margin: auto;\n}\n\n.btn-masuk {\n  padding: 12px 40px;\n  background-color: #D6DE23;\n  color: #603813;\n  margin-right: 30px;\n  border-radius: 20px;\n  font-family: \"Montserrat Medium\";\n  font-size: 18px;\n  font-weight: 600;\n}\n\n.btn-masuk:hover {\n  color: #603813;\n  background-color: #D6DE23;\n  text-decoration: none;\n}\n\n.btn-daftar {\n  padding: 12px 40px;\n  background-color: #FFDD15;\n  color: #603813;\n  margin-right: 30px;\n  border-radius: 20px;\n  font-family: \"Montserrat Medium\";\n  font-size: 18px;\n  font-weight: 600;\n}\n\n.btn-daftar:hover {\n  color: #603813;\n  background-color: #FFDD15;\n  text-decoration: none;\n}\n\n/* BIDANG */\n.bidang {\n  background-image: url(\"/assets/images/bg-section.png\");\n  background-repeat: no-repeat;\n  background-size: cover;\n  background-color: #fff;\n}\n\n.bidang img {\n  width: 100%;\n}\n\n.btn-bidang {\n  display: block;\n  padding: 2px 63px;\n  background-color: #fff;\n  color: #000;\n  border-radius: 30px;\n  font-size: 18px;\n  font-family: \"Montserrat Medium\";\n  font-weight: 600;\n  text-align: center;\n  transition: 0.3s;\n}\n\n.btn-bidang:hover {\n  text-decoration: none;\n}\n\n.mst {\n  color: #143A72;\n}\n\n.mst:hover {\n  background-color: #143A72;\n  color: #fff;\n}\n\n.ftr {\n  color: #604417;\n}\n\n.ftr:hover {\n  background-color: #604417;\n  color: #fff;\n}\n\n.ish {\n  color: #197222;\n}\n\n.ish:hover {\n  background-color: #197222;\n  color: #fff;\n}\n\n/* PEDOMAN INFORMASI */\n.pedoman {\n  background-color: #fff;\n}\n\n.info {\n  background-color: #8BC53F;\n}\n\n.informasi {\n  display: block;\n  background-color: #fff;\n  padding: 7px 16px;\n  margin: 5px 24px;\n  border-radius: 8px;\n}\n\n.informasi:hover {\n  background-color: whitesmoke;\n  transition: 0.3s;\n  text-decoration: none;\n}\n\n.informasi span {\n  position: absolute;\n  top: 10px;\n  right: 38px;\n  color: #fff;\n  padding: 2px 20px;\n  font-size: 14px;\n  border-top-left-radius: 4px;\n  border-bottom-left-radius: 4px;\n  font-family: \"Montserrat Medium\";\n  font-weight: 600;\n}\n\n.informasi h5 {\n  font-family: \"Montserrat Medium\";\n  font-weight: 600;\n}\n\n.informasi .first {\n  background-color: #2F62AD;\n}\n\n.informasi .second {\n  background-color: #1F8C2C;\n}\n\n.informasi .third {\n  background-color: #FAAF40;\n}\n\n.first-t {\n  color: #2F62AD;\n}\n\n.second-t {\n  color: #1F8C2C;\n}\n\n.third-t {\n  color: #845E28;\n}\n\n.informasi p {\n  font-size: 14px;\n  color: #444444;\n  font-family: \"Montserrat Regular\";\n}\n\n.pedoman .hero {\n  width: 35%;\n  display: block;\n  margin: auto;\n}\n\n.btn-pedoman {\n  display: block;\n  width: 70%;\n  margin: auto;\n  background-color: #2F62AD;\n  text-align: center;\n  color: #fff;\n  padding: 16px 0;\n  border-radius: 30px;\n  box-shadow: 2px 3px 5px #888888;\n  font-family: \"Montserrat Bold\";\n  font-size: 18px;\n}\n\n.btn-pedoman:hover {\n  text-decoration: none;\n  background-color: #09242c;\n  color: #fff;\n  transition: 0.3s;\n}\n\n/* TEASER */\n.teaser {\n  background-image: url(\"/assets/images/bg-section.png\");\n  background-repeat: no-repeat;\n  background-size: cover;\n  background-color: #FAAF40;\n}\n\n.teaser iframe {\n  margin-left: auto;\n  margin-right: auto;\n  width: 100%;\n  height: 400px;\n  z-index: 1;\n}\n\n.teaser .hero1 {\n  position: absolute;\n  left: 6%;\n  bottom: 27%;\n  width: 18%;\n  z-index: 0;\n}\n\n.teaser .hero2 {\n  position: absolute;\n  right: 4%;\n  bottom: 0;\n  width: 20%;\n  z-index: 0;\n}\n\n.teaser .hero3 {\n  position: absolute;\n  right: 2%;\n  bottom: 30%;\n  width: 24%;\n  z-index: 0;\n}\n\n.teaser .sky {\n  position: absolute;\n  right: 0;\n  bottom: 0;\n  width: 100%;\n  height: 62vh;\n  z-index: 0;\n  -o-object-fit: cover;\n     object-fit: cover;\n  -o-object-position: top;\n     object-position: top;\n}\n\n.teaser .text {\n  position: absolute;\n  left: 10%;\n  bottom: 0;\n  width: 20%;\n  z-index: 0;\n}\n\n/* TIMELINE */\n.timeline {\n  background-image: url(\"/assets/images/bg-timeline.png\");\n  background-repeat: no-repeat;\n  background-size: contain;\n  background-position: bottom;\n  background-color: #fff;\n}\n.timeline .titleTimeline {\n  font-family: \"Montserrat Bold\";\n  color: #845E28;\n}\n.timeline .txt-date {\n  font-family: \"Montserrat Medium\";\n}\n\n/* FOOTER */\n.footer {\n  background-image: url(\"/assets/images/bg-section.png\");\n  background-repeat: no-repeat;\n  background-size: cover;\n  background-position: bottom;\n  background-color: #fff;\n}\n\n.footer .logo {\n  width: 100%;\n}\n\n.footer i {\n  margin-right: 8px;\n}\n\n.footer a {\n  color: #0E8BCC;\n  margin-right: 14px;\n  font-family: \"Montserrat Medium\";\n  font-weight: 600;\n}\n\n.footer a:hover {\n  text-decoration: none;\n}\n\n.footer .loop {\n  position: absolute;\n  right: 0;\n  bottom: 0;\n  width: 100%;\n  height: 60vh;\n  z-index: 0;\n  -o-object-fit: cover;\n     object-fit: cover;\n  -o-object-position: top;\n     object-position: top;\n}\n\n.footer .alamat {\n  color: #666666;\n  font-family: \"Montserrat Medium\";\n  font-weight: 600;\n}\n\n/* LOGIN */\n.login {\n  background-image: url(\"/assets/images/bg-section.png\");\n  background-repeat: no-repeat;\n  background-size: cover;\n  background-position: center;\n  padding-top: 15%;\n  background-color: #ffffff;\n}\n\n.login .sky {\n  position: absolute;\n  top: 0;\n  width: 100%;\n  z-index: 0;\n  -o-object-fit: cover;\n     object-fit: cover;\n  -o-object-position: top;\n     object-position: top;\n}\n\n.form-login {\n  background-color: #F2F2F2;\n  padding: 35px;\n  border-radius: 12px;\n  color: #1277BD;\n}\n\n.form-group label {\n  font-family: \"Montserrat Bold\";\n}\n\n.form-login .form-control {\n  border-radius: 1.25rem !important;\n}\n\n.form-login .text-muted {\n  margin-bottom: 8px;\n}\n\n.btn-me {\n  width: 100%;\n  display: block;\n  text-align: center;\n  border: none;\n  margin: 18px 0;\n}\n\n/* Responsive */\n/* Extra small devices (portrait phones, less than 576px) */\n@media (max-width: 575.98px) {\n  section {\n    padding-top: 100px;\n  }\n\n  .title-section {\n    font-size: 20px;\n    margin-bottom: 12px;\n  }\n\n  .title-section2 {\n    margin-bottom: 10px;\n  }\n\n  /* INTRO */\n  .intro h1 {\n    margin-top: 35px;\n    font-size: 30px;\n  }\n\n  .intro .hero {\n    width: 80%;\n    margin: auto;\n  }\n\n  /* BIDANG */\n  .bidang img {\n    display: block;\n    width: 35%;\n    margin-left: auto;\n    margin-right: auto;\n  }\n\n  .btn-bidang {\n    padding: 4px 8px;\n    font-size: 14px;\n    width: -webkit-fit-content;\n    width: -moz-fit-content;\n    width: fit-content;\n    margin: auto;\n    margin-bottom: 20px;\n  }\n\n  /* PEDOMAN INFO */\n  .pedoman .hero {\n    width: 35%;\n  }\n\n  .btn-pedoman {\n    width: 70%;\n    font-size: 14px;\n    padding: 7px 0;\n    margin-bottom: 10px;\n  }\n\n  .informasi {\n    margin: 5px 0;\n  }\n\n  .informasi span {\n    position: sticky;\n    color: #fff;\n    padding: 2px 20px;\n    font-size: 14px;\n  }\n\n  /* TEASER */\n  .teaser {\n    padding-top: 0;\n  }\n\n  .teaser iframe {\n    margin-left: auto;\n    margin-right: auto;\n    width: 100%;\n    height: 250px;\n  }\n\n  .teaser .hero1, .teaser .hero2 {\n    width: 200px;\n    z-index: 0;\n  }\n\n  /* BIDANG DETAIL */\n  .bidang-detail {\n    padding-top: 28%;\n  }\n\n  .footer {\n    padding-top: 0;\n  }\n}\n/* Small devices (landscape phones, 576px and up) */\n@media (min-width: 576px) and (max-width: 767.98px) {\n  section {\n    padding-top: 100px;\n  }\n\n  .title-section {\n    font-size: 20px;\n    margin-bottom: 12px;\n  }\n\n  /* INTRO */\n  .intro h1 {\n    margin-top: 35px;\n    font-size: 30px;\n  }\n\n  .intro .hero {\n    width: 60%;\n    margin: auto;\n  }\n\n  /* BIDANG */\n  .bidang img {\n    display: block;\n    width: 100%;\n    margin-left: auto;\n    margin-right: auto;\n  }\n\n  .btn-bidang {\n    padding: 4px 8px;\n    font-size: 14px;\n    width: -webkit-fit-content;\n    width: -moz-fit-content;\n    width: fit-content;\n    margin: auto;\n    margin-bottom: 20px;\n  }\n\n  /* PEDOMAN INFO */\n  .pedoman .hero {\n    width: 45%;\n  }\n\n  .btn-pedoman {\n    width: 70%;\n    font-size: 14px;\n    padding: 7px 0;\n    margin-bottom: 10px;\n  }\n\n  .informasi {\n    margin: 5px 0;\n  }\n\n  /* TEASER */\n  .teaser {\n    padding-top: 0;\n  }\n}\n/* Medium devices (tablets, 768px and up) */\n@media (min-width: 768px) and (max-width: 991.98px) {\n  section {\n    padding-top: 100px;\n  }\n\n  /* BIDANG */\n  .btn-bidang {\n    padding: 4px 30px;\n    font-size: 14px;\n    width: -webkit-fit-content;\n    width: -moz-fit-content;\n    width: fit-content;\n    margin: auto;\n    margin-bottom: 20px;\n  }\n\n  /* PEEDOMAN INFORMASI */\n  .pedoman {\n    height: 50%;\n  }\n\n  .info {\n    height: 50%;\n  }\n\n  /* PEDOMAN INFO */\n  .pedoman .hero {\n    width: 45%;\n  }\n\n  .btn-pedoman {\n    width: 70%;\n    font-size: 14px;\n    padding: 7px 0;\n    margin-bottom: 10px;\n  }\n\n  .informasi {\n    margin: 5px 0;\n  }\n}\n/* Large devices (desktops, 992px and up) */\n/* Extra large devices (large desktops, 1200px and up) */", ""]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
