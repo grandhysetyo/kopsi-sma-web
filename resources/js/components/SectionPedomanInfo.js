@@ -1,5 +1,7 @@
 import React, { Component } from 'react'
 import axios from 'axios'
+import { Link } from "react-router-dom";
+import slugify from 'react-slugify';
 import request_api from '../api/request_api'
 
 export class SectionPedomanInfo extends Component {
@@ -69,15 +71,15 @@ export class SectionPedomanInfo extends Component {
                                     <div className="row">
                                         { this.state.informasi.map((data,idx) => 
                                             <div key={data.id} className={idx===0 ? "col-lg-12 d-block" : idx===1 ? "col-lg-12 d-none d-md-block d-lg-block d-xl-block" : "col-lg-12 d-none d-md-block d-lg-block d-xl-block"} id={'informasi-'+idx} data-aos="fade-up" data-aos-delay={6+idx+'00'}>
-                                                <a href="/" className="informasi">                                                      
+                                                <Link to={`/informasi-detail/${slugify(data.judul)}`} className="informasi">                                                      
                                                     <h5 className={idx === 0 ? "first-t" : idx===1 ? "second-t" : "third-t"}>{data.judul}</h5>
                                                     <span className={idx === 0 ? "first" : idx===1 ? "second" : "third"}>{data.tanggal}</span>                                                                       
                                                     <p>{data.content}</p>
-                                                </a>
+                                                </Link>
                                             </div>
                                         )}                                                                                                                       
                                         <div className="col-lg-12">
-                                            <a href="/" className="link-white float-right mr-4" id="informasi-link" data-aos="fade-up" data-aos-delay="800">Selengkapnya</a>
+                                            <Link to="/informasi" className="link-white float-right mr-4" id="informasi-link" data-aos="fade-up" data-aos-delay="800">Selengkapnya</Link>
                                         </div>
                                     </div>
                                 </div>

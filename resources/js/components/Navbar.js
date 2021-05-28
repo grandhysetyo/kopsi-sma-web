@@ -2,6 +2,7 @@ import React from 'react'
 import { Link } from "react-router-dom";
 const Navbar = (props) => {
     const dark = props.isDark    
+    const bgWhite = props.bgWhite    
     const Logo = (dark)=>{
         if(dark){
             return <img src="/assets/images/logo2.png" className="logo" alt="logo light" />
@@ -11,7 +12,7 @@ const Navbar = (props) => {
     }
     return (
         <>
-            <nav className={dark ? 'navbar navbar-expand-lg navbar-dark' : 'navbar navbar-expand-lg navbar-light' }>
+            <nav className={!dark && bgWhite ? 'navbar navbar-expand-lg navbar-light bg-white' : dark ?  'navbar navbar-expand-lg navbar-dark' : 'navbar navbar-expand-lg navbar-light' }>
                 <div className="container">
                 <a className="navbar-brand" href="/">
                     {Logo(dark)}                    
@@ -33,7 +34,7 @@ const Navbar = (props) => {
                         </li>
 
                         <li className="nav-item">
-                            <a className="nav-link" href="/#ped">Informasi Terbaru</a>
+                            <Link className="nav-link" to="/informasi">Informasi</Link>
                         </li>  
                         <li className="nav-item">
                             <a className="nav-link" href="/#lin">Linimasa</a>

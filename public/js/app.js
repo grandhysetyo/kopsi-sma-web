@@ -1958,7 +1958,9 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
 var request_api = {
+  fetchAllInformasi: "api/semua-informasi",
   fetchInformasi: "api/informasi",
+  fetchDetailInformasi: "/api/informasi/",
   fetchTimeline: "api/linimasa",
   fetchTeaser: 'api/teaser'
 };
@@ -2066,6 +2068,7 @@ __webpack_require__.r(__webpack_exports__);
 
 var Navbar = function Navbar(props) {
   var dark = props.isDark;
+  var bgWhite = props.bgWhite;
 
   var Logo = function Logo(dark) {
     if (dark) {
@@ -2085,7 +2088,7 @@ var Navbar = function Navbar(props) {
 
   return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.Fragment, {
     children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("nav", {
-      className: dark ? 'navbar navbar-expand-lg navbar-dark' : 'navbar navbar-expand-lg navbar-light',
+      className: !dark && bgWhite ? 'navbar navbar-expand-lg navbar-light bg-white' : dark ? 'navbar navbar-expand-lg navbar-dark' : 'navbar navbar-expand-lg navbar-light',
       children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("div", {
         className: "container",
         children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("a", {
@@ -2131,10 +2134,10 @@ var Navbar = function Navbar(props) {
               })]
             }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("li", {
               className: "nav-item",
-              children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("a", {
+              children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)(react_router_dom__WEBPACK_IMPORTED_MODULE_2__.Link, {
                 className: "nav-link",
-                href: "/#ped",
-                children: "Informasi Terbaru"
+                to: "/informasi",
+                children: "Informasi"
               })
             }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("li", {
               className: "nav-item",
@@ -2174,7 +2177,9 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router-dom/esm/react-router-dom.js");
 /* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
+
 
 
 
@@ -2210,8 +2215,8 @@ var SectionBidang = function SectionBidang() {
               children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("img", {
                 src: "/assets/images/mst.png",
                 alt: ""
-              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("a", {
-                href: "/",
+              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)(react_router_dom__WEBPACK_IMPORTED_MODULE_2__.Link, {
+                to: "/bidang",
                 className: "btn-bidang mst",
                 children: "Matematika, Sains, dan Teknologi"
               })]
@@ -2223,8 +2228,8 @@ var SectionBidang = function SectionBidang() {
               children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("img", {
                 src: "/assets/images/ftr.png",
                 alt: ""
-              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("a", {
-                href: "/",
+              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)(react_router_dom__WEBPACK_IMPORTED_MODULE_2__.Link, {
+                to: "/bidang",
                 className: "btn-bidang ftr",
                 children: "Fisika Terapan dan Rekayasa"
               })]
@@ -2236,8 +2241,8 @@ var SectionBidang = function SectionBidang() {
               children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("img", {
                 src: "/assets/images/ish.png",
                 alt: ""
-              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("a", {
-                href: "/",
+              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)(react_router_dom__WEBPACK_IMPORTED_MODULE_2__.Link, {
+                to: "/bidang",
                 className: "btn-bidang ish",
                 children: "Ilmu Sosial dan Humaniora"
               })]
@@ -2431,8 +2436,10 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
 /* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! axios */ "./node_modules/axios/index.js");
 /* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(axios__WEBPACK_IMPORTED_MODULE_1__);
-/* harmony import */ var _api_request_api__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../api/request_api */ "./resources/js/api/request_api.js");
-/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
+/* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router-dom/esm/react-router-dom.js");
+/* harmony import */ var react_slugify__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! react-slugify */ "./node_modules/react-slugify/dist/slugify.js");
+/* harmony import */ var _api_request_api__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../api/request_api */ "./resources/js/api/request_api.js");
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
 function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -2463,6 +2470,8 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 
 
 
+
+
 var SectionPedomanInfo = /*#__PURE__*/function (_Component) {
   _inherits(SectionPedomanInfo, _Component);
 
@@ -2476,7 +2485,7 @@ var SectionPedomanInfo = /*#__PURE__*/function (_Component) {
     _this = _super.call(this, props);
 
     _defineProperty(_assertThisInitialized(_this), "getDataInformasi", function () {
-      axios__WEBPACK_IMPORTED_MODULE_1___default().get(_api_request_api__WEBPACK_IMPORTED_MODULE_2__.default.fetchInformasi).then(function (res) {
+      axios__WEBPACK_IMPORTED_MODULE_1___default().get(_api_request_api__WEBPACK_IMPORTED_MODULE_3__.default.fetchInformasi).then(function (res) {
         if (res.data.length > 3) {
           _this.setState({
             informasi: res.data.slice(0, 3)
@@ -2506,44 +2515,44 @@ var SectionPedomanInfo = /*#__PURE__*/function (_Component) {
   }, {
     key: "render",
     value: function render() {
-      return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.Fragment, {
-        children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("section", {
+      return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.Fragment, {
+        children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("section", {
           id: "ped",
           className: "h-100",
-          children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("div", {
+          children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)("div", {
             className: "row h-100",
-            children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("div", {
+            children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("div", {
               className: "pedoman col-sm-12 col-md-12 col-lg-6 align-content-center",
-              children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("div", {
+              children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("div", {
                 className: "container h-100",
-                children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("div", {
+                children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("div", {
                   className: "row h-100",
-                  children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("div", {
+                  children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)("div", {
                     className: "col-lg-12 align-self-center",
-                    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("div", {
+                    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("div", {
                       className: "row",
-                      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("div", {
+                      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("div", {
                         className: "col-lg-8 mx-auto",
                         id: "pedoman-text",
                         "data-aos": "fade-up",
                         "data-aos-delay": "300",
-                        children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("h3", {
+                        children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("h3", {
                           className: "title-section",
                           children: "BUKU PEDOMAN"
                         })
                       })
-                    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("div", {
+                    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("div", {
                       className: "row",
-                      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("div", {
+                      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)("div", {
                         className: "col-lg-12",
-                        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("img", {
+                        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("img", {
                           src: "/assets/images/cover-pedoman.png",
                           alt: "",
                           className: "hero",
                           id: "pedoman-hero",
                           "data-aos": "fade-up",
                           "data-aos-delay": "300"
-                        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("a", {
+                        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("a", {
                           href: "https://pusatprestasinasional.kemdikbud.go.id/wp-content/uploads/2021/05/Pedoman-KoPSI-Tahun-2021.pdf",
                           target: "_blank",
                           className: "btn-pedoman",
@@ -2557,52 +2566,52 @@ var SectionPedomanInfo = /*#__PURE__*/function (_Component) {
                   })
                 })
               })
-            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("div", {
+            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("div", {
               className: "info col-sm-12 col-md-12 col-lg-6  align-content-center",
-              children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("div", {
+              children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("div", {
                 className: "container h-100 ",
-                children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("div", {
+                children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("div", {
                   className: "row h-100",
-                  children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("div", {
+                  children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)("div", {
                     className: "col-lg-12 align-self-center",
-                    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("div", {
+                    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("div", {
                       className: "row",
-                      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("div", {
+                      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("div", {
                         className: "col-lg-8 mx-auto",
                         id: "informasi-text",
                         "data-aos": "fade-up",
                         "data-aos-delay": "500",
-                        children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("h3", {
+                        children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("h3", {
                           className: "title-section2",
                           children: "INFORMASI TERBARU"
                         })
                       })
-                    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("div", {
+                    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)("div", {
                       className: "row",
                       children: [this.state.informasi.map(function (data, idx) {
-                        return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("div", {
+                        return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("div", {
                           className: idx === 0 ? "col-lg-12 d-block" : idx === 1 ? "col-lg-12 d-none d-md-block d-lg-block d-xl-block" : "col-lg-12 d-none d-md-block d-lg-block d-xl-block",
                           id: 'informasi-' + idx,
                           "data-aos": "fade-up",
                           "data-aos-delay": 6 + idx + '00',
-                          children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("a", {
-                            href: "/",
+                          children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)(react_router_dom__WEBPACK_IMPORTED_MODULE_5__.Link, {
+                            to: "/informasi-detail/".concat((0,react_slugify__WEBPACK_IMPORTED_MODULE_2__.default)(data.judul)),
                             className: "informasi",
-                            children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("h5", {
+                            children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("h5", {
                               className: idx === 0 ? "first-t" : idx === 1 ? "second-t" : "third-t",
                               children: data.judul
-                            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("span", {
+                            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("span", {
                               className: idx === 0 ? "first" : idx === 1 ? "second" : "third",
                               children: data.tanggal
-                            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("p", {
+                            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("p", {
                               children: data.content
                             })]
                           })
                         }, data.id);
-                      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("div", {
+                      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("div", {
                         className: "col-lg-12",
-                        children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("a", {
-                          href: "/",
+                        children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(react_router_dom__WEBPACK_IMPORTED_MODULE_5__.Link, {
+                          to: "/informasi",
                           className: "link-white float-right mr-4",
                           id: "informasi-link",
                           "data-aos": "fade-up",
@@ -2902,17 +2911,19 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
-/* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router-dom/esm/react-router-dom.js");
-/* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router/esm/react-router.js");
+/* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router-dom/esm/react-router-dom.js");
+/* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router/esm/react-router.js");
 /* harmony import */ var aos__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! aos */ "./node_modules/aos/dist/aos.js");
 /* harmony import */ var aos__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(aos__WEBPACK_IMPORTED_MODULE_1__);
 /* harmony import */ var _components_Navbar__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./components/Navbar */ "./resources/js/components/Navbar.js");
 /* harmony import */ var _pages_Beranda__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./pages/Beranda */ "./resources/js/pages/Beranda.js");
 /* harmony import */ var _pages_Bidang__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./pages/Bidang */ "./resources/js/pages/Bidang.js");
-/* harmony import */ var _pages_Login__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./pages/Login */ "./resources/js/pages/Login.js");
-/* harmony import */ var _sass_style_scss__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../sass/style.scss */ "./resources/sass/style.scss");
-/* harmony import */ var aos_dist_aos_css__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! aos/dist/aos.css */ "./node_modules/aos/dist/aos.css");
-/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
+/* harmony import */ var _sass_style_scss__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../sass/style.scss */ "./resources/sass/style.scss");
+/* harmony import */ var aos_dist_aos_css__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! aos/dist/aos.css */ "./node_modules/aos/dist/aos.css");
+/* harmony import */ var _pages_Informasi__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./pages/Informasi */ "./resources/js/pages/Informasi.js");
+/* harmony import */ var _pages_InformasiDetail__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./pages/InformasiDetail */ "./resources/js/pages/InformasiDetail.js");
+/* harmony import */ var _pages_Not_Found__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ./pages/Not_Found */ "./resources/js/pages/Not_Found.js");
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
 function _slicedToArray(arr, i) { return _arrayWithHoles(arr) || _iterableToArrayLimit(arr, i) || _unsupportedIterableToArray(arr, i) || _nonIterableRest(); }
 
 function _nonIterableRest() { throw new TypeError("Invalid attempt to destructure non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); }
@@ -2930,8 +2941,10 @@ function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
 
 
 
-
  // Style
+
+
+
 
 
  // 0 Light
@@ -2942,14 +2955,15 @@ function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
 
 
 function App() {
-  (0,react__WEBPACK_IMPORTED_MODULE_0__.useEffect)(function () {
-    aos__WEBPACK_IMPORTED_MODULE_1___default().init();
-  }, []);
-
   var _useState = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(true),
       _useState2 = _slicedToArray(_useState, 2),
       nav = _useState2[0],
       setNav = _useState2[1];
+
+  var _useState3 = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(false),
+      _useState4 = _slicedToArray(_useState3, 2),
+      bg = _useState4[0],
+      setBg = _useState4[1];
 
   var handleSectionChange = function handleSectionChange(section) {
     if (section === 0) {
@@ -2959,21 +2973,46 @@ function App() {
     }
   };
 
-  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.Fragment, {
-    children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsxs)(react_router_dom__WEBPACK_IMPORTED_MODULE_9__.BrowserRouter, {
-      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)(_components_Navbar__WEBPACK_IMPORTED_MODULE_2__.default, {
-        isDark: nav
-      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsxs)(react_router_dom__WEBPACK_IMPORTED_MODULE_10__.Switch, {
-        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)(react_router_dom__WEBPACK_IMPORTED_MODULE_10__.Route, {
+  (0,react__WEBPACK_IMPORTED_MODULE_0__.useEffect)(function () {
+    aos__WEBPACK_IMPORTED_MODULE_1___default().init();
+  }, []);
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_10__.jsx)(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_10__.Fragment, {
+    children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_10__.jsxs)(react_router_dom__WEBPACK_IMPORTED_MODULE_11__.BrowserRouter, {
+      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_10__.jsx)(_components_Navbar__WEBPACK_IMPORTED_MODULE_2__.default, {
+        isDark: nav,
+        bgWhite: bg
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_10__.jsxs)(react_router_dom__WEBPACK_IMPORTED_MODULE_12__.Switch, {
+        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_10__.jsx)(react_router_dom__WEBPACK_IMPORTED_MODULE_12__.Route, {
           path: "/",
           exact: true,
-          children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)(_pages_Beranda__WEBPACK_IMPORTED_MODULE_3__.default, {
+          children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_10__.jsx)(_pages_Beranda__WEBPACK_IMPORTED_MODULE_3__.default, {
             sectionActive: handleSectionChange
           })
-        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)(react_router_dom__WEBPACK_IMPORTED_MODULE_10__.Route, {
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_10__.jsx)(react_router_dom__WEBPACK_IMPORTED_MODULE_12__.Route, {
           path: "/bidang",
           exact: true,
-          children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)(_pages_Bidang__WEBPACK_IMPORTED_MODULE_4__.default, {
+          children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_10__.jsx)(_pages_Bidang__WEBPACK_IMPORTED_MODULE_4__.default, {
+            sectionActive: handleSectionChange
+          })
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_10__.jsx)(react_router_dom__WEBPACK_IMPORTED_MODULE_12__.Route, {
+          path: "/informasi",
+          exact: true,
+          children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_10__.jsx)(_pages_Informasi__WEBPACK_IMPORTED_MODULE_7__.default, {
+            sectionActive: handleSectionChange,
+            navbgWhite: function navbgWhite(con) {
+              return setBg(con);
+            }
+          })
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_10__.jsx)(react_router_dom__WEBPACK_IMPORTED_MODULE_12__.Route, {
+          path: "/informasi-detail/:slug",
+          children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_10__.jsx)(_pages_InformasiDetail__WEBPACK_IMPORTED_MODULE_8__.default, {
+            sectionActive: handleSectionChange,
+            navbgWhite: function navbgWhite(con) {
+              return setBg(con);
+            }
+          })
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_10__.jsx)(react_router_dom__WEBPACK_IMPORTED_MODULE_12__.Route, {
+          children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_10__.jsx)(_pages_Not_Found__WEBPACK_IMPORTED_MODULE_9__.default, {
             sectionActive: handleSectionChange
           })
         })]
@@ -3386,16 +3425,377 @@ var Bidang = /*#__PURE__*/function (_Component) {
 
 /***/ }),
 
-/***/ "./resources/js/pages/Login.js":
-/*!*************************************!*\
-  !*** ./resources/js/pages/Login.js ***!
-  \*************************************/
+/***/ "./resources/js/pages/Informasi.js":
+/*!*****************************************!*\
+  !*** ./resources/js/pages/Informasi.js ***!
+  \*****************************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "default": () => (/* binding */ Login)
+/* harmony export */   "Informasi": () => (/* binding */ Informasi),
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! axios */ "./node_modules/axios/index.js");
+/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(axios__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router-dom/esm/react-router-dom.js");
+/* harmony import */ var react_paginate__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! react-paginate */ "./node_modules/react-paginate/dist/react-paginate.js");
+/* harmony import */ var react_paginate__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(react_paginate__WEBPACK_IMPORTED_MODULE_2__);
+/* harmony import */ var react_slugify__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! react-slugify */ "./node_modules/react-slugify/dist/slugify.js");
+/* harmony import */ var _api_request_api__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../api/request_api */ "./resources/js/api/request_api.js");
+/* harmony import */ var _sass_informasi_scss__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../../sass/informasi.scss */ "./resources/sass/informasi.scss");
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
+function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
+
+function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function"); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, writable: true, configurable: true } }); if (superClass) _setPrototypeOf(subClass, superClass); }
+
+function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || function _setPrototypeOf(o, p) { o.__proto__ = p; return o; }; return _setPrototypeOf(o, p); }
+
+function _createSuper(Derived) { var hasNativeReflectConstruct = _isNativeReflectConstruct(); return function _createSuperInternal() { var Super = _getPrototypeOf(Derived), result; if (hasNativeReflectConstruct) { var NewTarget = _getPrototypeOf(this).constructor; result = Reflect.construct(Super, arguments, NewTarget); } else { result = Super.apply(this, arguments); } return _possibleConstructorReturn(this, result); }; }
+
+function _possibleConstructorReturn(self, call) { if (call && (_typeof(call) === "object" || typeof call === "function")) { return call; } return _assertThisInitialized(self); }
+
+function _assertThisInitialized(self) { if (self === void 0) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return self; }
+
+function _isNativeReflectConstruct() { if (typeof Reflect === "undefined" || !Reflect.construct) return false; if (Reflect.construct.sham) return false; if (typeof Proxy === "function") return true; try { Boolean.prototype.valueOf.call(Reflect.construct(Boolean, [], function () {})); return true; } catch (e) { return false; } }
+
+function _getPrototypeOf(o) { _getPrototypeOf = Object.setPrototypeOf ? Object.getPrototypeOf : function _getPrototypeOf(o) { return o.__proto__ || Object.getPrototypeOf(o); }; return _getPrototypeOf(o); }
+
+function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
+
+
+
+
+
+
+
+
+
+
+
+var DisplayInformasi = function DisplayInformasi(props) {
+  return props.data.slice(props.pagesVisited, props.pagesVisited + props.infoPerPage).map(function (res, idx) {
+    return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)("div", {
+      className: "col-lg-12",
+      "data-aos": "fade-up",
+      "data-aos-delay": 6 + idx + '00',
+      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsxs)(react_router_dom__WEBPACK_IMPORTED_MODULE_7__.Link, {
+        to: "/informasi-detail/".concat((0,react_slugify__WEBPACK_IMPORTED_MODULE_3__.default)(res.judul)),
+        className: "informasi",
+        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)("h5", {
+          className: idx % 2 == 0 ? "first-t" : "second-t",
+          children: res.judul
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)("span", {
+          className: idx % 2 == 0 ? "first" : "second",
+          children: res.tanggal
+        }), res.content]
+      })
+    }, res.id);
+  });
+};
+
+var Informasi = /*#__PURE__*/function (_Component) {
+  _inherits(Informasi, _Component);
+
+  var _super = _createSuper(Informasi);
+
+  function Informasi(props) {
+    var _this;
+
+    _classCallCheck(this, Informasi);
+
+    _this = _super.call(this, props);
+
+    _defineProperty(_assertThisInitialized(_this), "changePage", function (_ref) {
+      var selected = _ref.selected;
+
+      _this.setState({
+        pageNumber: selected,
+        pageVisited: selected * _this.state.infoPerPage
+      });
+    });
+
+    _defineProperty(_assertThisInitialized(_this), "getAllDataInformasi", function () {
+      axios__WEBPACK_IMPORTED_MODULE_1___default().get(_api_request_api__WEBPACK_IMPORTED_MODULE_4__.default.fetchAllInformasi).then(function (res) {
+        // data informasi < info per page
+        if (res.data.length < _this.state.infoPerPage) {
+          _this.setState({
+            infoPerPage: res.data.length
+          });
+        }
+
+        _this.setState({
+          informasi: res.data,
+          pageCount: Math.ceil(res.data.length / _this.state.infoPerPage)
+        });
+      })["catch"](function (error) {
+        // handle error
+        console.log(error);
+      });
+    });
+
+    _this.props.sectionActive(1);
+
+    _this.props.navbgWhite(true);
+
+    _this.state = {
+      informasi: [],
+      infoPerPage: 10,
+      pageNumber: 0,
+      pageVisited: 0,
+      pageCount: 0
+    };
+    return _this;
+  }
+
+  _createClass(Informasi, [{
+    key: "componentDidMount",
+    value: function componentDidMount() {
+      this.getAllDataInformasi();
+    }
+  }, {
+    key: "render",
+    value: function render() {
+      return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.Fragment, {
+        children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)("section", {
+          className: "info-all",
+          children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsxs)("div", {
+            className: "container",
+            children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)("div", {
+              className: "row",
+              children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)("div", {
+                className: "col-lg-8 mx-auto",
+                "data-aos": "fade-up",
+                "data-aos-delay": "500",
+                children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)("h3", {
+                  className: "title-section",
+                  children: "INFORMASI TERBARU"
+                })
+              })
+            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)("div", {
+              className: "row",
+              children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)(DisplayInformasi, {
+                data: this.state.informasi,
+                pagesVisited: this.state.pageVisited,
+                infoPerPage: this.state.infoPerPage
+              })
+            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)("div", {
+              className: "row",
+              children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)("div", {
+                className: "col-6 mx-auto",
+                children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)("nav", {
+                  className: "pagination-outer",
+                  "aria-label": "Page navigation",
+                  children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)((react_paginate__WEBPACK_IMPORTED_MODULE_2___default()), {
+                    nextLabel: "»",
+                    previousLabel: "«",
+                    pageCount: this.state.pageCount,
+                    onPageChange: this.changePage,
+                    containerClassName: "pagination",
+                    previousLinkClassName: "page-link",
+                    nextLinkClassName: "page-link",
+                    disabledClassName: "active",
+                    activeClassName: "active",
+                    pageClassName: "page-item",
+                    pageLinkClassName: "page-link"
+                  })
+                })
+              })
+            })]
+          })
+        })
+      });
+    }
+  }]);
+
+  return Informasi;
+}(react__WEBPACK_IMPORTED_MODULE_0__.Component);
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (Informasi);
+
+/***/ }),
+
+/***/ "./resources/js/pages/InformasiDetail.js":
+/*!***********************************************!*\
+  !*** ./resources/js/pages/InformasiDetail.js ***!
+  \***********************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "InformasiDetail": () => (/* binding */ InformasiDetail),
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react_router__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! react-router */ "./node_modules/react-router/esm/react-router.js");
+/* harmony import */ var _api_request_api__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../api/request_api */ "./resources/js/api/request_api.js");
+/* harmony import */ var _sass_informasi_detail_scss__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../sass/informasi-detail.scss */ "./resources/sass/informasi-detail.scss");
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
+function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
+
+function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function"); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, writable: true, configurable: true } }); if (superClass) _setPrototypeOf(subClass, superClass); }
+
+function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || function _setPrototypeOf(o, p) { o.__proto__ = p; return o; }; return _setPrototypeOf(o, p); }
+
+function _createSuper(Derived) { var hasNativeReflectConstruct = _isNativeReflectConstruct(); return function _createSuperInternal() { var Super = _getPrototypeOf(Derived), result; if (hasNativeReflectConstruct) { var NewTarget = _getPrototypeOf(this).constructor; result = Reflect.construct(Super, arguments, NewTarget); } else { result = Super.apply(this, arguments); } return _possibleConstructorReturn(this, result); }; }
+
+function _possibleConstructorReturn(self, call) { if (call && (_typeof(call) === "object" || typeof call === "function")) { return call; } return _assertThisInitialized(self); }
+
+function _assertThisInitialized(self) { if (self === void 0) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return self; }
+
+function _isNativeReflectConstruct() { if (typeof Reflect === "undefined" || !Reflect.construct) return false; if (Reflect.construct.sham) return false; if (typeof Proxy === "function") return true; try { Boolean.prototype.valueOf.call(Reflect.construct(Boolean, [], function () {})); return true; } catch (e) { return false; } }
+
+function _getPrototypeOf(o) { _getPrototypeOf = Object.setPrototypeOf ? Object.getPrototypeOf : function _getPrototypeOf(o) { return o.__proto__ || Object.getPrototypeOf(o); }; return _getPrototypeOf(o); }
+
+function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
+
+
+
+
+
+
+
+
+var ParseHtml = function ParseHtml(props) {
+  return parse(props.html);
+};
+
+var InformasiDetail = /*#__PURE__*/function (_Component) {
+  _inherits(InformasiDetail, _Component);
+
+  var _super = _createSuper(InformasiDetail);
+
+  function InformasiDetail(props) {
+    var _this;
+
+    _classCallCheck(this, InformasiDetail);
+
+    _this = _super.call(this, props);
+
+    _defineProperty(_assertThisInitialized(_this), "getDetailInformasi", function (slug) {
+      axios.get(_api_request_api__WEBPACK_IMPORTED_MODULE_1__.default.fetchDetailInformasi + slug).then(function (res) {
+        _this.setState({
+          info: res.data
+        });
+      })["catch"](function (error) {
+        // handle error
+        console.log(error);
+      });
+    });
+
+    _this.props.sectionActive(1);
+
+    _this.props.navbgWhite(true);
+
+    _this.state = {
+      info: []
+    };
+    return _this;
+  }
+
+  _createClass(InformasiDetail, [{
+    key: "componentDidMount",
+    value: function componentDidMount() {
+      var slug = this.props.match.params.slug;
+      this.getDetailInformasi(slug);
+    }
+  }, {
+    key: "render",
+    value: function render() {
+      return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.Fragment, {
+        children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("section", {
+          className: "info-detail",
+          children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("div", {
+            className: "container px-5",
+            children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("div", {
+              className: "row",
+              children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("div", {
+                className: "col-lg-8",
+                "data-aos": "fade-up",
+                "data-aos-delay": "500",
+                children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("h3", {
+                  className: "title-section text-left",
+                  children: this.state.info.judul
+                })
+              })
+            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("div", {
+              className: "row",
+              children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("div", {
+                className: "col-lg-12 mb-3",
+                "data-aos": "fade-up",
+                "data-aos-delay": "600",
+                children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("div", {
+                  dangerouslySetInnerHTML: {
+                    __html: this.state.info.content
+                  }
+                })
+              })
+            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("div", {
+              className: "row",
+              children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("div", {
+                className: "col-lg-4",
+                "data-aos": "fade-up",
+                "data-aos-delay": "700",
+                children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("h5", {
+                  className: "title-section text-left mb-3",
+                  children: "Lampiran"
+                }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("ul", {
+                  className: "lampiran",
+                  children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("li", {
+                    children: ["Lorem ipsum ", /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("a", {
+                      href: "/",
+                      className: "btnUnduh",
+                      children: "Unduh"
+                    })]
+                  }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("li", {
+                    children: ["Lorem ipsum ", /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("a", {
+                      href: "/",
+                      className: "btnUnduh",
+                      children: "Unduh"
+                    })]
+                  })]
+                })]
+              })
+            })]
+          })
+        })
+      });
+    }
+  }]);
+
+  return InformasiDetail;
+}(react__WEBPACK_IMPORTED_MODULE_0__.Component);
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ((0,react_router__WEBPACK_IMPORTED_MODULE_4__.withRouter)(InformasiDetail));
+
+/***/ }),
+
+/***/ "./resources/js/pages/Not_Found.js":
+/*!*****************************************!*\
+  !*** ./resources/js/pages/Not_Found.js ***!
+  \*****************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "NotFound": () => (/* binding */ NotFound),
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
 /* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
@@ -3423,91 +3823,53 @@ function _getPrototypeOf(o) { _getPrototypeOf = Object.setPrototypeOf ? Object.g
 
 
 
+var NotFound = /*#__PURE__*/function (_Component) {
+  _inherits(NotFound, _Component);
 
+  var _super = _createSuper(NotFound);
 
-
-var Login = /*#__PURE__*/function (_Component) {
-  _inherits(Login, _Component);
-
-  var _super = _createSuper(Login);
-
-  function Login(props) {
+  function NotFound(props) {
     var _this;
 
-    _classCallCheck(this, Login);
+    _classCallCheck(this, NotFound);
 
     _this = _super.call(this, props);
 
-    _this.props.sectionActive(0);
+    _this.props.sectionActive(1);
 
     return _this;
   }
 
-  _createClass(Login, [{
+  _createClass(NotFound, [{
     key: "render",
     value: function render() {
-      return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.Fragment, {
-        children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("section", {
-          className: "login",
-          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("img", {
-            src: "/assets/images/sky-login.png",
-            className: "sky",
-            alt: ""
-          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("div", {
-            className: "container",
+      return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("section", {
+        style: {
+          paddingTop: '150px',
+          backgroundColor: 'white'
+        },
+        children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("div", {
+          className: "container",
+          children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("div", {
+            className: "row",
             children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("div", {
-              className: "row",
-              children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("div", {
-                className: "col-lg-5 mx-auto",
-                children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("form", {
-                  className: "form-login",
-                  children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("div", {
-                    className: "form-group",
-                    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("label", {
-                      htmlFor: "email",
-                      children: "Surel (Email)"
-                    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("input", {
-                      type: "email",
-                      className: "form-control",
-                      name: "email",
-                      placeholder: "Enter email"
-                    })]
-                  }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("div", {
-                    className: "form-group",
-                    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("label", {
-                      htmlFor: "exampleInputPassword1",
-                      children: "Kata Sandi (Password)"
-                    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("input", {
-                      type: "password",
-                      className: "form-control",
-                      id: "exampleInputPassword1",
-                      placeholder: "Kata Sandi"
-                    })]
-                  }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("button", {
-                    type: "submit",
-                    className: "btn-me btn-masuk",
-                    children: "Masuk"
-                  }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("span", {
-                    className: "text-muted",
-                    children: "Belum memiliki akun?"
-                  }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("a", {
-                    href: "/daftar",
-                    className: "btn-me btn-daftar",
-                    children: "Daftar"
-                  })]
-                })
+              className: "col-lg-8",
+              "data-aos": "fade-up",
+              "data-aos-delay": "500",
+              children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("h1", {
+                className: "title-section text-left",
+                children: "404 Not Found"
               })
             })
-          })]
+          })
         })
       });
     }
   }]);
 
-  return Login;
+  return NotFound;
 }(react__WEBPACK_IMPORTED_MODULE_0__.Component);
-
-
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (NotFound);
 
 /***/ }),
 
@@ -8018,6 +8380,54 @@ __webpack_require__.r(__webpack_exports__);
 var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default()(function(i){return i[1]});
 // Module
 ___CSS_LOADER_EXPORT___.push([module.id, "body {\n  overflow-x: hidden;\n}\n\n/* BIDANG DETAIL */\n.bidang-detail {\n  background-image: url(\"/assets/images/bg-section.png\");\n  background-position: center;\n  padding-top: 12%;\n  background-repeat: repeat-y;\n}\n\n.card-bidang {\n  margin-bottom: 8%;\n}\n\n.card-bidang img {\n  width: 100%;\n  position: absolute;\n  z-index: 0;\n}\n\n.card-bidang.mst-b .text {\n  position: sticky;\n  z-index: 1;\n  padding: 17% 50% 10% 15%;\n}\n\n.card-bidang.ftr-b .text {\n  position: sticky;\n  z-index: 1;\n  padding: 10% 10% 10% 50%;\n}\n\n.card-bidang.card-bidang.ftr-b {\n  margin-bottom: 14%;\n}\n\n.card-bidang.ish-b .text {\n  position: sticky;\n  z-index: 1;\n  padding: 7% 50% 10% 15%;\n}\n\n.text h5 {\n  font-size: 4vh;\n  font-family: \"Montserrat Bold\";\n}\n\n.text p {\n  font-size: 2vh;\n  font-family: \"Montserrat Regular\";\n}\n\n.mst-b .text h5 {\n  color: #fff;\n}\n\n.ftr-b .text h5 {\n  color: #604417;\n}\n\n.ish-b .text h5 {\n  color: #13424F;\n}\n\n.mst-b .text p {\n  color: #fff;\n  font-size: 14px;\n}\n\n.ftr-b .text p {\n  color: #4D4D4D;\n}\n\n.ish-b .text p {\n  color: #4D4D4D;\n}\n\n.medali {\n  width: 100%;\n  text-align: center;\n  margin-bottom: 80px;\n}\n\n.medali img {\n  display: block;\n  margin-left: auto;\n  margin-right: auto;\n  justify-content: center;\n}\n\n.medali h4 {\n  width: 100%;\n  margin: auto;\n  margin-top: 20px;\n  font-family: \"Montserrat Bold\";\n}\n\n.gold img, .silver img, .bronze img, .etc img {\n  width: 60%;\n}\n\n.gold h4 {\n  color: #FFD144;\n}\n\n.silver h4 {\n  color: #1B75BB;\n}\n\n.bronze h4 {\n  color: #C74A7E;\n}\n\n.etc h4 {\n  color: #C78B1F;\n}\n\n.footer2 {\n  padding-top: 50px;\n  background-color: #1B75BB;\n}\n\n.footer2 b {\n  font-family: \"Montserrat Regular\";\n}\n\n.footer2 p {\n  font-family: \"Montserrat Regular\";\n}\n\n.footer2-k-img {\n  width: 48%;\n}\n\n.footer2-p-img {\n  width: 52%;\n}\n\n.sosmed {\n  display: flex;\n  flex-direction: row;\n  justify-content: center;\n}\n\n.sosmed a {\n  width: 38px;\n  height: 38px;\n  border: 1px #fff solid;\n  margin: 5px;\n  padding: 5px 5px;\n  color: #fff;\n  border-radius: 50%;\n  text-align: center;\n}\n\n.sosmed a:hover {\n  color: #fff;\n  text-decoration: none;\n}\n\n@media (max-width: 991.98px) {\n  .card-bidang.mst-b .text {\n    background-color: #3A77CE;\n    width: 80%;\n    padding: 24px;\n    margin: auto;\n    border-radius: 15px;\n  }\n\n  .card-bidang.ftr-b .text {\n    background-color: #FBFC78;\n    width: 80%;\n    padding: 24px;\n    margin: auto;\n    border-radius: 15px;\n  }\n\n  .card-bidang.ish-b .text {\n    background-color: #8BC53F;\n    width: 80%;\n    padding: 24px;\n    margin: auto;\n    border-radius: 15px;\n  }\n\n  .card-bidang .text img {\n    width: 100%;\n    position: relative;\n    bottom: -24px;\n    right: -24px;\n  }\n\n  .card-bidang.ftr-b .text img {\n    /* right: auto; */\n    left: -24px;\n  }\n}\n/* Responsive */\n/* Extra small devices (portrait phones, less than 576px) */\n@media (max-width: 575.98px) {\n  /* BIDANG DETAIL */\n  .bidang-detail {\n    padding-top: 28%;\n  }\n}\n/* Small devices (landscape phones, 576px and up) */\n/* Medium devices (tablets, 768px and up) */\n/* Large devices (desktops, 992px and up) */\n/* Extra large devices (large desktops, 1200px and up) */", ""]);
+// Exports
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
+
+
+/***/ }),
+
+/***/ "./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[9].oneOf[1].use[1]!./node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[9].oneOf[1].use[2]!./node_modules/sass-loader/dist/cjs.js??ruleSet[1].rules[9].oneOf[1].use[3]!./resources/sass/informasi-detail.scss":
+/*!************************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[9].oneOf[1].use[1]!./node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[9].oneOf[1].use[2]!./node_modules/sass-loader/dist/cjs.js??ruleSet[1].rules[9].oneOf[1].use[3]!./resources/sass/informasi-detail.scss ***!
+  \************************************************************************************************************************************************************************************************************************************************************************************/
+/***/ ((module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../../node_modules/css-loader/dist/runtime/api.js */ "./node_modules/css-loader/dist/runtime/api.js");
+/* harmony import */ var _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0__);
+// Imports
+
+var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default()(function(i){return i[1]});
+// Module
+___CSS_LOADER_EXPORT___.push([module.id, ".info-detail {\n  padding-top: 10rem;\n  background-color: #fff;\n}\n\n.lampiran {\n  padding: 0;\n  list-style-type: none;\n}\n.lampiran li {\n  margin-bottom: 20px;\n}\n\n.btnUnduh {\n  padding: 5px 10px;\n  background-color: #6BA549;\n  color: #fff;\n  border-radius: 12px;\n}\n\n.btnUnduh:hover {\n  background-color: #4f8d2b;\n  text-decoration: none;\n  color: #fff;\n}", ""]);
+// Exports
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
+
+
+/***/ }),
+
+/***/ "./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[9].oneOf[1].use[1]!./node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[9].oneOf[1].use[2]!./node_modules/sass-loader/dist/cjs.js??ruleSet[1].rules[9].oneOf[1].use[3]!./resources/sass/informasi.scss":
+/*!*****************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[9].oneOf[1].use[1]!./node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[9].oneOf[1].use[2]!./node_modules/sass-loader/dist/cjs.js??ruleSet[1].rules[9].oneOf[1].use[3]!./resources/sass/informasi.scss ***!
+  \*****************************************************************************************************************************************************************************************************************************************************************************/
+/***/ ((module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../../node_modules/css-loader/dist/runtime/api.js */ "./node_modules/css-loader/dist/runtime/api.js");
+/* harmony import */ var _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0__);
+// Imports
+
+var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default()(function(i){return i[1]});
+// Module
+___CSS_LOADER_EXPORT___.push([module.id, ".info-all {\n  padding-top: 100px;\n}\n.info-all .informasi {\n  display: block;\n  background-color: #fff;\n  padding: 7px 16px;\n  margin: 5px 24px;\n  border-radius: 8px;\n}\n.info-all .informasi:hover {\n  background-color: whitesmoke;\n  transition: 0.3s;\n  text-decoration: none;\n}\n.info-all .informasi span {\n  position: absolute;\n  top: 10px;\n  right: 38px;\n  color: #fff;\n  padding: 2px 20px;\n  font-size: 14px;\n  border-top-left-radius: 4px;\n  border-bottom-left-radius: 4px;\n  font-family: \"Montserrat Medium\";\n  font-weight: 600;\n}\n.info-all .informasi h5 {\n  font-family: \"Montserrat Medium\";\n  font-weight: 600;\n}\n.info-all .informasi .first {\n  background-color: #2F62AD;\n}\n.info-all .informasi .second {\n  background-color: #1F8C2C;\n}\n.info-all .informasi .third {\n  background-color: #FAAF40;\n}\n.info-all .pagination-outer {\n  text-align: center;\n  margin-top: 100px;\n}\n.info-all .pagination {\n  font-family: \"Montserrat Bold\";\n  display: inline-flex;\n}\n.info-all .pagination li a.page-link {\n  color: #333;\n  background: #e7e7e7;\n  font-size: 20px;\n  font-weight: 600;\n  line-height: 36px;\n  height: 40px;\n  width: 40px;\n  padding: 0;\n  margin: 0 5px;\n  border: none;\n  border-radius: 50%;\n  display: block;\n  overflow: hidden;\n  position: relative;\n  z-index: 1;\n  transition: all 0.5s ease 0.2s;\n}\n.info-all .pagination li a.page-link:hover,\n.info-all .pagination li a.page-link:focus,\n.info-all .pagination li.active a.page-link {\n  color: #fff;\n  background: #2F62AD;\n  box-shadow: 0 0 10px -2px rgba(0, 0, 0, 0.3);\n}\n.info-all .pagination li:first-child a.page-link,\n.info-all .pagination li:last-child a.page-link {\n  line-height: 38px;\n  transition: all 0.5s ease 0s;\n}\n.info-all .pagination li a.page-link:before {\n  content: \"\";\n  background-color: #2F62AD;\n  height: 12px;\n  width: 12px;\n  border-radius: 50%;\n  transform: translateX(-50%);\n  position: absolute;\n  left: 50%;\n  top: -15px;\n  z-index: -1;\n  transition: all 0.5s ease 0s;\n}\n.info-all .pagination li.active a.page-link:before,\n.info-all .pagination li a.page-link:hover:before {\n  opacity: 0;\n  top: 50%;\n}\n.info-all .pagination li:first-child a.page-link:before,\n.info-all .pagination li:last-child a.page-link:before {\n  display: none;\n}\n@media only screen and (max-width: 480px) {\n  .info-all .pagination {\n    font-size: 0;\n    display: block;\n  }\n  .info-all .pagination li {\n    display: inline-block;\n    margin: 0 0 10px;\n  }\n}", ""]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
@@ -69522,6 +69932,17 @@ if (false) {} else {
 
 /***/ }),
 
+/***/ "./node_modules/react-paginate/dist/react-paginate.js":
+/*!************************************************************!*\
+  !*** ./node_modules/react-paginate/dist/react-paginate.js ***!
+  \************************************************************/
+/***/ ((module, __unused_webpack_exports, __webpack_require__) => {
+
+!function(e,a){ true?module.exports=a(__webpack_require__(/*! react */ "./node_modules/react/index.js")):0}(__webpack_require__.g,(function(e){return function(e){var a={};function t(r){if(a[r])return a[r].exports;var n=a[r]={i:r,l:!1,exports:{}};return e[r].call(n.exports,n,n.exports,t),n.l=!0,n.exports}return t.m=e,t.c=a,t.d=function(e,a,r){t.o(e,a)||Object.defineProperty(e,a,{enumerable:!0,get:r})},t.r=function(e){"undefined"!=typeof Symbol&&Symbol.toStringTag&&Object.defineProperty(e,Symbol.toStringTag,{value:"Module"}),Object.defineProperty(e,"__esModule",{value:!0})},t.t=function(e,a){if(1&a&&(e=t(e)),8&a)return e;if(4&a&&"object"==typeof e&&e&&e.__esModule)return e;var r=Object.create(null);if(t.r(r),Object.defineProperty(r,"default",{enumerable:!0,value:e}),2&a&&"string"!=typeof e)for(var n in e)t.d(r,n,function(a){return e[a]}.bind(null,n));return r},t.n=function(e){var a=e&&e.__esModule?function(){return e.default}:function(){return e};return t.d(a,"a",a),a},t.o=function(e,a){return Object.prototype.hasOwnProperty.call(e,a)},t.p="",t(t.s=4)}([function(e,a,t){e.exports=t(2)()},function(a,t){a.exports=e},function(e,a,t){"use strict";var r=t(3);function n(){}function i(){}i.resetWarningCache=n,e.exports=function(){function e(e,a,t,n,i,s){if(s!==r){var l=new Error("Calling PropTypes validators directly is not supported by the `prop-types` package. Use PropTypes.checkPropTypes() to call them. Read more at http://fb.me/use-check-prop-types");throw l.name="Invariant Violation",l}}function a(){return e}e.isRequired=e;var t={array:e,bool:e,func:e,number:e,object:e,string:e,symbol:e,any:e,arrayOf:a,element:e,elementType:e,instanceOf:a,node:e,objectOf:a,oneOf:a,oneOfType:a,shape:a,exact:a,checkPropTypes:i,resetWarningCache:n};return t.PropTypes=t,t}},function(e,a,t){"use strict";e.exports="SECRET_DO_NOT_PASS_THIS_OR_YOU_WILL_BE_FIRED"},function(e,a,t){"use strict";t.r(a);var r=t(1),n=t.n(r),i=t(0),s=t.n(i);function l(){return(l=Object.assign||function(e){for(var a=1;a<arguments.length;a++){var t=arguments[a];for(var r in t)Object.prototype.hasOwnProperty.call(t,r)&&(e[r]=t[r])}return e}).apply(this,arguments)}var o=function(e){var a=e.pageClassName,t=e.pageLinkClassName,r=e.page,i=e.selected,s=e.activeClassName,o=e.activeLinkClassName,u=e.getEventListener,c=e.pageSelectedHandler,p=e.href,f=e.extraAriaContext,g=e.pageLabelBuilder,d=e.ariaLabel||"Page "+r+(f?" "+f:""),b=null;return i&&(b="page",d=e.ariaLabel||"Page "+r+" is your current page",a=void 0!==a?a+" "+s:s,void 0!==t?void 0!==o&&(t=t+" "+o):t=o),n.a.createElement("li",{className:a},n.a.createElement("a",l({role:"button",className:t,href:p,tabIndex:"0","aria-label":d,"aria-current":b,onKeyPress:c},u(c)),g(r)))};o.propTypes={pageSelectedHandler:s.a.func.isRequired,selected:s.a.bool.isRequired,pageClassName:s.a.string,pageLinkClassName:s.a.string,activeClassName:s.a.string,activeLinkClassName:s.a.string,extraAriaContext:s.a.string,href:s.a.string,ariaLabel:s.a.string,page:s.a.number.isRequired,getEventListener:s.a.func.isRequired,pageLabelBuilder:s.a.func.isRequired};var u=o;function c(){return(c=Object.assign||function(e){for(var a=1;a<arguments.length;a++){var t=arguments[a];for(var r in t)Object.prototype.hasOwnProperty.call(t,r)&&(e[r]=t[r])}return e}).apply(this,arguments)}var p=function(e){var a=e.breakLabel,t=e.breakClassName,r=e.breakLinkClassName,i=e.breakHandler,s=e.getEventListener,l=t||"break";return n.a.createElement("li",{className:l},n.a.createElement("a",c({className:r,role:"button",tabIndex:"0",onKeyPress:i},s(i)),a))};p.propTypes={breakLabel:s.a.oneOfType([s.a.string,s.a.node]),breakClassName:s.a.string,breakLinkClassName:s.a.string,breakHandler:s.a.func.isRequired,getEventListener:s.a.func.isRequired};var f=p;function g(e){return(g="function"==typeof Symbol&&"symbol"==typeof Symbol.iterator?function(e){return typeof e}:function(e){return e&&"function"==typeof Symbol&&e.constructor===Symbol&&e!==Symbol.prototype?"symbol":typeof e})(e)}function d(){return(d=Object.assign||function(e){for(var a=1;a<arguments.length;a++){var t=arguments[a];for(var r in t)Object.prototype.hasOwnProperty.call(t,r)&&(e[r]=t[r])}return e}).apply(this,arguments)}function b(e,a){for(var t=0;t<a.length;t++){var r=a[t];r.enumerable=r.enumerable||!1,r.configurable=!0,"value"in r&&(r.writable=!0),Object.defineProperty(e,r.key,r)}}function v(e,a){return(v=Object.setPrototypeOf||function(e,a){return e.__proto__=a,e})(e,a)}function m(e){var a=function(){if("undefined"==typeof Reflect||!Reflect.construct)return!1;if(Reflect.construct.sham)return!1;if("function"==typeof Proxy)return!0;try{return Date.prototype.toString.call(Reflect.construct(Date,[],(function(){}))),!0}catch(e){return!1}}();return function(){var t,r=C(e);if(a){var n=C(this).constructor;t=Reflect.construct(r,arguments,n)}else t=r.apply(this,arguments);return h(this,t)}}function h(e,a){return!a||"object"!==g(a)&&"function"!=typeof a?y(e):a}function y(e){if(void 0===e)throw new ReferenceError("this hasn't been initialised - super() hasn't been called");return e}function C(e){return(C=Object.setPrototypeOf?Object.getPrototypeOf:function(e){return e.__proto__||Object.getPrototypeOf(e)})(e)}function P(e,a,t){return a in e?Object.defineProperty(e,a,{value:t,enumerable:!0,configurable:!0,writable:!0}):e[a]=t,e}var k=function(e){!function(e,a){if("function"!=typeof a&&null!==a)throw new TypeError("Super expression must either be null or a function");e.prototype=Object.create(a&&a.prototype,{constructor:{value:e,writable:!0,configurable:!0}}),a&&v(e,a)}(s,e);var a,t,r,i=m(s);function s(e){var a,t;return function(e,a){if(!(e instanceof a))throw new TypeError("Cannot call a class as a function")}(this,s),P(y(a=i.call(this,e)),"handlePreviousPage",(function(e){var t=a.state.selected;e.preventDefault?e.preventDefault():e.returnValue=!1,t>0&&a.handlePageSelected(t-1,e)})),P(y(a),"handleNextPage",(function(e){var t=a.state.selected,r=a.props.pageCount;e.preventDefault?e.preventDefault():e.returnValue=!1,t<r-1&&a.handlePageSelected(t+1,e)})),P(y(a),"handlePageSelected",(function(e,t){t.preventDefault?t.preventDefault():t.returnValue=!1,a.state.selected!==e?(a.setState({selected:e}),a.callCallback(e)):a.callActiveCallback(e)})),P(y(a),"getEventListener",(function(e){return P({},a.props.eventListener,e)})),P(y(a),"handleBreakClick",(function(e,t){t.preventDefault?t.preventDefault():t.returnValue=!1;var r=a.state.selected;a.handlePageSelected(r<e?a.getForwardJump():a.getBackwardJump(),t)})),P(y(a),"callCallback",(function(e){void 0!==a.props.onPageChange&&"function"==typeof a.props.onPageChange&&a.props.onPageChange({selected:e})})),P(y(a),"callActiveCallback",(function(e){void 0!==a.props.onPageActive&&"function"==typeof a.props.onPageActive&&a.props.onPageActive({selected:e})})),P(y(a),"pagination",(function(){var e=[],t=a.props,r=t.pageRangeDisplayed,i=t.pageCount,s=t.marginPagesDisplayed,l=t.breakLabel,o=t.breakClassName,u=t.breakLinkClassName,c=a.state.selected;if(i<=r)for(var p=0;p<i;p++)e.push(a.getPageElement(p));else{var g,d,b,v=r/2,m=r-v;c>i-r/2?v=r-(m=i-c):c<r/2&&(m=r-(v=c));var h=function(e){return a.getPageElement(e)};for(g=0;g<i;g++)(d=g+1)<=s||d>i-s||g>=c-v&&g<=c+m?e.push(h(g)):l&&e[e.length-1]!==b&&(b=n.a.createElement(f,{key:g,breakLabel:l,breakClassName:o,breakLinkClassName:u,breakHandler:a.handleBreakClick.bind(null,g),getEventListener:a.getEventListener}),e.push(b))}return e})),t=e.initialPage?e.initialPage:e.forcePage?e.forcePage:0,a.state={selected:t},a}return a=s,(t=[{key:"componentDidMount",value:function(){var e=this.props,a=e.initialPage,t=e.disableInitialCallback,r=e.extraAriaContext;void 0===a||t||this.callCallback(a),r&&console.warn("DEPRECATED (react-paginate): The extraAriaContext prop is deprecated. You should now use the ariaLabelBuilder instead.")}},{key:"componentDidUpdate",value:function(e){void 0!==this.props.forcePage&&this.props.forcePage!==e.forcePage&&this.setState({selected:this.props.forcePage})}},{key:"getForwardJump",value:function(){var e=this.state.selected,a=this.props,t=a.pageCount,r=e+a.pageRangeDisplayed;return r>=t?t-1:r}},{key:"getBackwardJump",value:function(){var e=this.state.selected-this.props.pageRangeDisplayed;return e<0?0:e}},{key:"hrefBuilder",value:function(e){var a=this.props,t=a.hrefBuilder,r=a.pageCount;if(t&&e!==this.state.selected&&e>=0&&e<r)return t(e+1)}},{key:"ariaLabelBuilder",value:function(e){var a=e===this.state.selected;if(this.props.ariaLabelBuilder&&e>=0&&e<this.props.pageCount){var t=this.props.ariaLabelBuilder(e+1,a);return this.props.extraAriaContext&&!a&&(t=t+" "+this.props.extraAriaContext),t}}},{key:"getPageElement",value:function(e){var a=this.state.selected,t=this.props,r=t.pageClassName,i=t.pageLinkClassName,s=t.activeClassName,l=t.activeLinkClassName,o=t.extraAriaContext,c=t.pageLabelBuilder;return n.a.createElement(u,{key:e,pageSelectedHandler:this.handlePageSelected.bind(null,e),selected:a===e,pageClassName:r,pageLinkClassName:i,activeClassName:s,activeLinkClassName:l,extraAriaContext:o,href:this.hrefBuilder(e),ariaLabel:this.ariaLabelBuilder(e),page:e+1,pageLabelBuilder:c,getEventListener:this.getEventListener})}},{key:"render",value:function(){var e=this.props,a=e.disabledClassName,t=e.pageCount,r=e.containerClassName,i=e.previousLabel,s=e.previousClassName,l=e.previousLinkClassName,o=e.previousAriaLabel,u=e.prevRel,c=e.nextLabel,p=e.nextClassName,f=e.nextLinkClassName,g=e.nextAriaLabel,b=e.nextRel,v=this.state.selected,m=s+(0===v?" ".concat(a):""),h=p+(v===t-1?" ".concat(a):""),y=0===v?"true":"false",C=v===t-1?"true":"false";return n.a.createElement("ul",{className:r},n.a.createElement("li",{className:m},n.a.createElement("a",d({className:l,href:this.hrefBuilder(v-1),tabIndex:"0",role:"button",onKeyPress:this.handlePreviousPage,"aria-disabled":y,"aria-label":o,rel:u},this.getEventListener(this.handlePreviousPage)),i)),this.pagination(),n.a.createElement("li",{className:h},n.a.createElement("a",d({className:f,href:this.hrefBuilder(v+1),tabIndex:"0",role:"button",onKeyPress:this.handleNextPage,"aria-disabled":C,"aria-label":g,rel:b},this.getEventListener(this.handleNextPage)),c)))}}])&&b(a.prototype,t),r&&b(a,r),s}(r.Component);P(k,"propTypes",{pageCount:s.a.number.isRequired,pageRangeDisplayed:s.a.number.isRequired,marginPagesDisplayed:s.a.number.isRequired,previousLabel:s.a.node,previousAriaLabel:s.a.string,prevRel:s.a.string,nextLabel:s.a.node,nextAriaLabel:s.a.string,nextRel:s.a.string,breakLabel:s.a.oneOfType([s.a.string,s.a.node]),hrefBuilder:s.a.func,onPageChange:s.a.func,onPageActive:s.a.func,initialPage:s.a.number,forcePage:s.a.number,disableInitialCallback:s.a.bool,containerClassName:s.a.string,pageClassName:s.a.string,pageLinkClassName:s.a.string,pageLabelBuilder:s.a.func,activeClassName:s.a.string,activeLinkClassName:s.a.string,previousClassName:s.a.string,nextClassName:s.a.string,previousLinkClassName:s.a.string,nextLinkClassName:s.a.string,disabledClassName:s.a.string,breakClassName:s.a.string,breakLinkClassName:s.a.string,extraAriaContext:s.a.string,ariaLabelBuilder:s.a.func,eventListener:s.a.string}),P(k,"defaultProps",{pageCount:10,pageRangeDisplayed:2,marginPagesDisplayed:3,activeClassName:"selected",previousLabel:"Previous",previousClassName:"previous",previousAriaLabel:"Previous page",prevRel:"prev",nextLabel:"Next",nextClassName:"next",nextAriaLabel:"Next page",nextRel:"next",breakLabel:"...",disabledClassName:"disabled",disableInitialCallback:!1,pageLabelBuilder:function(e){return e},eventListener:"onClick"});a.default=k}])}));
+//# sourceMappingURL=react-paginate.js.map
+
+/***/ }),
+
 /***/ "./node_modules/react-router-dom/esm/react-router-dom.js":
 /*!***************************************************************!*\
   !*** ./node_modules/react-router-dom/esm/react-router-dom.js ***!
@@ -71142,6 +71563,77 @@ function pathToRegexp (path, keys, options) {
   return stringToRegexp(/** @type {string} */ (path), /** @type {!Array} */ (keys), options)
 }
 
+
+/***/ }),
+
+/***/ "./node_modules/react-slugify/dist/slugify.js":
+/*!****************************************************!*\
+  !*** ./node_modules/react-slugify/dist/slugify.js ***!
+  \****************************************************/
+/***/ ((__unused_webpack_module, exports) => {
+
+"use strict";
+
+exports.__esModule = true;
+var stripAccents = function (str) {
+    var accents = 'ÀÁÂÃÄÅĄàáâãäåąÒÓÔÕÕÖØòóôõöøÈÉÊËĘèéêëðęÇĆçćÐÌÍÎÏìíîïÙÚÛÜùúûüÑñŠŚšśŸÿýŽŹŻžźżŁłŃń';
+    var fixes = 'AAAAAAAaaaaaaaOOOOOOOooooooEEEEEeeeeeeCCccDIIIIiiiiUUUUuuuuNnSSssYyyZZZzzzLlNn';
+    var split = accents.split('').join('|');
+    var reg = new RegExp("(" + split + ")", 'g');
+    function replacement(a) {
+        return fixes[accents.indexOf(a)] || '';
+    }
+    return str.replace(reg, replacement);
+};
+var harmonize = function (text, delimiter, ignoreInvalid) {
+    if (ignoreInvalid === void 0) { ignoreInvalid = false; }
+    var harmonized = stripAccents(text).trim().toLowerCase();
+    if (ignoreInvalid) {
+        return harmonized.replace(/\s+/g, delimiter);
+    }
+    return harmonized.replace(new RegExp("[^a-z0-9" + delimiter + "]+", 'g'), delimiter);
+};
+var slugify = function (node, options) {
+    if (options === void 0) { options = { delimiter: '-', prefix: '' }; }
+    if (!options.delimiter)
+        options.delimiter = '-';
+    if (!options.prefix)
+        options.prefix = '';
+    if (!node || typeof node === 'boolean') {
+        return '';
+    }
+    var delimiter = options.delimiter, prefix = options.prefix;
+    // string, number
+    if (typeof node === 'string' || typeof node === 'number') {
+        var harmonizedPrefix = harmonize(prefix, delimiter, true);
+        var harmonizedNode = harmonize(String(node), delimiter);
+        if (harmonizedPrefix) {
+            return "" + harmonizedPrefix + delimiter + harmonizedNode;
+        }
+        return harmonizedNode;
+    }
+    // empty object
+    if (typeof node === 'object' && Object.keys(node).length === 0) {
+        return '';
+    }
+    // We did the check about empty object before
+    // const castedNode = node as React.ReactElement<any> | React.ReactNodeArray | React.ReactPortal;
+    // ReactPortal
+    if ('children' in node) {
+        return slugify(node.children);
+    }
+    // ReactNodeArray
+    if (node instanceof Array) {
+        return slugify(node.map(function (n) { return slugify(n, { delimiter: delimiter }); }).join(delimiter), options);
+    }
+    // ReactElement
+    if ('type' in node)
+        return slugify(node.props.children, options);
+    // unhandled case
+    return '';
+};
+exports.default = slugify;
+//# sourceMappingURL=slugify.js.map
 
 /***/ }),
 
@@ -76146,6 +76638,66 @@ var update = _node_modules_style_loader_dist_runtime_injectStylesIntoStyleTag_js
 
 
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (_node_modules_css_loader_dist_cjs_js_ruleSet_1_rules_9_oneOf_1_use_1_node_modules_postcss_loader_dist_cjs_js_ruleSet_1_rules_9_oneOf_1_use_2_node_modules_sass_loader_dist_cjs_js_ruleSet_1_rules_9_oneOf_1_use_3_bidang_scss__WEBPACK_IMPORTED_MODULE_1__.default.locals || {});
+
+/***/ }),
+
+/***/ "./resources/sass/informasi-detail.scss":
+/*!**********************************************!*\
+  !*** ./resources/sass/informasi-detail.scss ***!
+  \**********************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var _node_modules_style_loader_dist_runtime_injectStylesIntoStyleTag_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! !../../node_modules/style-loader/dist/runtime/injectStylesIntoStyleTag.js */ "./node_modules/style-loader/dist/runtime/injectStylesIntoStyleTag.js");
+/* harmony import */ var _node_modules_style_loader_dist_runtime_injectStylesIntoStyleTag_js__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_node_modules_style_loader_dist_runtime_injectStylesIntoStyleTag_js__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _node_modules_css_loader_dist_cjs_js_ruleSet_1_rules_9_oneOf_1_use_1_node_modules_postcss_loader_dist_cjs_js_ruleSet_1_rules_9_oneOf_1_use_2_node_modules_sass_loader_dist_cjs_js_ruleSet_1_rules_9_oneOf_1_use_3_informasi_detail_scss__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! !!../../node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[9].oneOf[1].use[1]!../../node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[9].oneOf[1].use[2]!../../node_modules/sass-loader/dist/cjs.js??ruleSet[1].rules[9].oneOf[1].use[3]!./informasi-detail.scss */ "./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[9].oneOf[1].use[1]!./node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[9].oneOf[1].use[2]!./node_modules/sass-loader/dist/cjs.js??ruleSet[1].rules[9].oneOf[1].use[3]!./resources/sass/informasi-detail.scss");
+
+            
+
+var options = {};
+
+options.insert = "head";
+options.singleton = false;
+
+var update = _node_modules_style_loader_dist_runtime_injectStylesIntoStyleTag_js__WEBPACK_IMPORTED_MODULE_0___default()(_node_modules_css_loader_dist_cjs_js_ruleSet_1_rules_9_oneOf_1_use_1_node_modules_postcss_loader_dist_cjs_js_ruleSet_1_rules_9_oneOf_1_use_2_node_modules_sass_loader_dist_cjs_js_ruleSet_1_rules_9_oneOf_1_use_3_informasi_detail_scss__WEBPACK_IMPORTED_MODULE_1__.default, options);
+
+
+
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (_node_modules_css_loader_dist_cjs_js_ruleSet_1_rules_9_oneOf_1_use_1_node_modules_postcss_loader_dist_cjs_js_ruleSet_1_rules_9_oneOf_1_use_2_node_modules_sass_loader_dist_cjs_js_ruleSet_1_rules_9_oneOf_1_use_3_informasi_detail_scss__WEBPACK_IMPORTED_MODULE_1__.default.locals || {});
+
+/***/ }),
+
+/***/ "./resources/sass/informasi.scss":
+/*!***************************************!*\
+  !*** ./resources/sass/informasi.scss ***!
+  \***************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var _node_modules_style_loader_dist_runtime_injectStylesIntoStyleTag_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! !../../node_modules/style-loader/dist/runtime/injectStylesIntoStyleTag.js */ "./node_modules/style-loader/dist/runtime/injectStylesIntoStyleTag.js");
+/* harmony import */ var _node_modules_style_loader_dist_runtime_injectStylesIntoStyleTag_js__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_node_modules_style_loader_dist_runtime_injectStylesIntoStyleTag_js__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _node_modules_css_loader_dist_cjs_js_ruleSet_1_rules_9_oneOf_1_use_1_node_modules_postcss_loader_dist_cjs_js_ruleSet_1_rules_9_oneOf_1_use_2_node_modules_sass_loader_dist_cjs_js_ruleSet_1_rules_9_oneOf_1_use_3_informasi_scss__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! !!../../node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[9].oneOf[1].use[1]!../../node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[9].oneOf[1].use[2]!../../node_modules/sass-loader/dist/cjs.js??ruleSet[1].rules[9].oneOf[1].use[3]!./informasi.scss */ "./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[9].oneOf[1].use[1]!./node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[9].oneOf[1].use[2]!./node_modules/sass-loader/dist/cjs.js??ruleSet[1].rules[9].oneOf[1].use[3]!./resources/sass/informasi.scss");
+
+            
+
+var options = {};
+
+options.insert = "head";
+options.singleton = false;
+
+var update = _node_modules_style_loader_dist_runtime_injectStylesIntoStyleTag_js__WEBPACK_IMPORTED_MODULE_0___default()(_node_modules_css_loader_dist_cjs_js_ruleSet_1_rules_9_oneOf_1_use_1_node_modules_postcss_loader_dist_cjs_js_ruleSet_1_rules_9_oneOf_1_use_2_node_modules_sass_loader_dist_cjs_js_ruleSet_1_rules_9_oneOf_1_use_3_informasi_scss__WEBPACK_IMPORTED_MODULE_1__.default, options);
+
+
+
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (_node_modules_css_loader_dist_cjs_js_ruleSet_1_rules_9_oneOf_1_use_1_node_modules_postcss_loader_dist_cjs_js_ruleSet_1_rules_9_oneOf_1_use_2_node_modules_sass_loader_dist_cjs_js_ruleSet_1_rules_9_oneOf_1_use_3_informasi_scss__WEBPACK_IMPORTED_MODULE_1__.default.locals || {});
 
 /***/ }),
 

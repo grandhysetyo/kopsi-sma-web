@@ -167,6 +167,7 @@ Route::group(['prefix' => 'admin', 'middleware' => ['auth','admin']], function()
 
 require __DIR__.'/auth.php';
 
-Route::get('/{any}', function () {
-    return view('app');
-})->where('any', '.*');
+Route::view('/informasi-detail', 'app');
+Route::view('/informasi-detail/{id}', 'app');
+Route::view('/', 'app');
+Route::view('/{path}', 'app');

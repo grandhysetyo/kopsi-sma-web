@@ -1,0 +1,30 @@
+$myriad-bold: 'Myriad Pro Bold';
+$myriad-reg: 'Myriad Pro Regular';
+$abjectFailure: 'Abject Failure';
+$montserrat-reg: 'Montserrat Regular';
+$montserrat-med: 'Montserrat Medium';
+$montserrat-bold: 'Montserrat Bold';
+
+
+.info-detail{
+    padding-top: 10rem;
+    background-color: #fff;
+}
+.lampiran{
+    padding: 0;
+    list-style-type: none;
+    li{
+        margin-bottom: 20px;
+    }
+}
+.btnUnduh{
+    padding: 5px 10px;
+    background-color: #6BA549;
+    color: #fff;
+    border-radius: 12px;
+}
+.btnUnduh:hover{
+    background-color: #4f8d2b;
+    text-decoration: none;
+    color: #fff;
+}

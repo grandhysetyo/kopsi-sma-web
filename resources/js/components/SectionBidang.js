@@ -1,4 +1,5 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 
 const SectionBidang = () => {
     return (
@@ -14,15 +15,15 @@ const SectionBidang = () => {
                         <div className="row" >
                             <div className="col-sm-4 col-md-4 col-lg-4" id="bidang-mst" data-aos="zoom-in-up" data-aos-delay="400">
                                 <img src="/assets/images/mst.png" alt="" />
-                                <a href="/" className="btn-bidang mst">Matematika, Sains, dan Teknologi</a>
+                                <Link to="/bidang" className="btn-bidang mst">Matematika, Sains, dan Teknologi</Link>
                             </div>
                             <div className="col-sm-4 col-md-4 col-lg-4" id="bidang-ftr" data-aos="zoom-in-up" data-aos-delay="500">
                                 <img src="/assets/images/ftr.png" alt="" />
-                                <a href="/" className="btn-bidang ftr">Fisika Terapan dan Rekayasa</a>
+                                <Link to="/bidang" className="btn-bidang ftr">Fisika Terapan dan Rekayasa</Link>
                             </div>
                             <div className="col-sm-4 col-md-4 col-lg-4" id="bidang-ish" data-aos="zoom-in-up" data-aos-delay="600">
                                 <img src="/assets/images/ish.png" alt="" />
-                                <a href="/" className="btn-bidang ish">Ilmu Sosial dan Humaniora</a>
+                                <Link to="/bidang" className="btn-bidang ish">Ilmu Sosial dan Humaniora</Link>
                             </div>
                         </div>
                     </div>
