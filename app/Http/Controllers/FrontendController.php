@@ -403,7 +403,24 @@ class FrontendController extends Controller
 
    public function detail_info(Info $informasi)
    {
-      $info = $informasi;
+      $info = $informasi->load('berkas');
+
+      $file = [];
+
+      foreach ($info->berkas as $data) {
+         if ($data->type == 0) {
+            $berkas = asset('uploads/'.$data->berkas);
+         } else {
+            $berkas = $data->url;
+         }
+         
+          $file[] = ([
+              'id' => $data->id,
+              'judul' => $data->judul,
+              'file' => $berkas,
+              'info_id' => $data->info_id,
+          ]);
+      }
 
       $vars = (object)array(
          'id' => $info->id,
@@ -412,6 +429,7 @@ class FrontendController extends Controller
          'color' => $info->color,
          'tanggal' => Carbon::parse($info->created_at)->format('d M Y'),
          'content' => $info->content,
+         'file' => $file,
      );
 
       return response()->json($vars);

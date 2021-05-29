@@ -14,7 +14,7 @@ class InfoController extends Controller
         {
             return datatables()->of(Info::query())
             ->editColumn('edit', function ($data) {
-                $mystring = '<a href="'.route("info.edit", $data->id).'" class="bg-indigo-500 text-white p-2 rounded mr-2 font-bold">Edit</a><a href="'.route("hapus.info", $data->id).'" onclick="return confirm(`Apakah anda ingin menghapus ?`)" class="bg-red-500 text-white p-2 rounded mr-2 font-bold">Hapus</a>';
+                $mystring = '<a href="'.route("lampiran.index", $data->id).'" class="bg-yellow-500 text-white p-2 rounded mr-2 font-bold">Lampiran</a><a href="'.route("info.edit", $data->id).'" class="bg-indigo-500 text-white p-2 rounded mr-2 font-bold">Edit</a><a href="'.route("hapus.info", $data->id).'" onclick="return confirm(`Apakah anda ingin menghapus ?`)" class="bg-red-500 text-white p-2 rounded mr-2 font-bold">Hapus</a>';
                 return $mystring;
             })
            

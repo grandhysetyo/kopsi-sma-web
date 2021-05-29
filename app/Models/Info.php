@@ -21,4 +21,9 @@ class Info extends Model
     {
         return 'slug';
     }
+
+    public function berkas()
+    {
+        return $this->hasMany(\App\Models\BerkasPengumuman::class, 'info_id','id');
+    }
 }

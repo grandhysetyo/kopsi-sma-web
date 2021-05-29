@@ -37,6 +37,7 @@ use App\Http\Controllers\PembimbingController;
 use App\Http\Controllers\InfoController;
 use App\Http\Controllers\LinimasaController;
 use App\Http\Controllers\TanggalController;
+use App\Http\Controllers\BerkasTambahanController;
 
 Route::get('/leader-register', [FrontendController::class, 'ketua'])->name('daftar_ketua');
 Route::get('/member-register', [FrontendController::class, 'anggota'])->name('daftar_anggota');
@@ -159,6 +160,11 @@ Route::group(['prefix' => 'admin', 'middleware' => ['auth','admin']], function()
     Route::get('bidang/{id}/delete', [BidangController::class, 'destroy'])->name('hapus.bidang');
     Route::resource('info', InfoController::class);
     Route::get('info/{id}/delete', [InfoController::class, 'destroy'])->name('hapus.info');
+    Route::get('info/{id}/berkas', [BerkasTambahanController::class, 'index'])->name('lampiran.index');
+    Route::post('info/{id}/berkas', [BerkasTambahanController::class, 'store'])->name('lampiran.store');
+    Route::get('info/{id}/berkas/{berkas}', [BerkasTambahanController::class, 'edit'])->name('lampiran.edit');
+    Route::put('info/{id}/berkas/{berkas}', [BerkasTambahanController::class, 'update'])->name('lampiran.update');
+    Route::get('info/{id}/berkas/delete/{berkas}', [BerkasTambahanController::class, 'destroy'])->name('lampiran.delete');
     Route::resource('linimasa', LinimasaController::class);
     Route::get('linimasa/{id}/delete', [LinimasaController::class, 'destroy'])->name('hapus.linimasa');
     Route::resource('tanggal', TanggalController::class);
