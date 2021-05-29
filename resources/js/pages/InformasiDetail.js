@@ -14,14 +14,21 @@ export class InformasiDetail extends Component {
         this.props.sectionActive(1) 
         this.props.navbgWhite(true)  
         this.state = {
-            info: []
+            info: [],
+            b: []
         }      
            
     }    
     getDetailInformasi = (slug) => {
         axios.get(request_api.fetchDetailInformasi+slug)
         .then((res)=> {                           
-            this.setState({info: res.data})            
+            this.setState({info: res.data})  
+            // console.log(res.data)
+            if(res.data.file.length > 0){
+                this.setState({b: res.data.file})  
+                // console.log(this.state.file)
+            }              
+               
         })
         .catch(function (error) {
             // handle error
@@ -32,9 +39,9 @@ export class InformasiDetail extends Component {
         const slug = this.props.match.params.slug;
         this.getDetailInformasi(slug);
     }
-    render() {        
-        return (
-            
+    render() {      
+        
+        return (            
             <>
                 <section className="info-detail">
                     <div className="container px-5">
@@ -52,8 +59,9 @@ export class InformasiDetail extends Component {
                             <div className="col-lg-4" data-aos="fade-up" data-aos-delay="700">
                                 <h5 className="title-section text-left mb-3">Lampiran</h5>
                                 <ul className="lampiran">
-                                    <li>Lorem ipsum <a href="/" className="btnUnduh">Unduh</a></li>
-                                    <li>Lorem ipsum <a href="/" className="btnUnduh">Unduh</a></li>
+                                    {this.state.b.map((data)=>{
+                                        return <li>{data.judul} <a href={data.file} className="btnUnduh">Unduh</a></li>
+                                     })}                                                                                                             
                                 </ul>                                
                             </div>
                         </div>

@@ -3692,7 +3692,15 @@ var InformasiDetail = /*#__PURE__*/function (_Component) {
       axios.get(_api_request_api__WEBPACK_IMPORTED_MODULE_1__.default.fetchDetailInformasi + slug).then(function (res) {
         _this.setState({
           info: res.data
-        });
+        }); // console.log(res.data)
+
+
+        if (res.data.file.length > 0) {
+          _this.setState({
+            b: res.data.file
+          }); // console.log(this.state.file)
+
+        }
       })["catch"](function (error) {
         // handle error
         console.log(error);
@@ -3704,7 +3712,8 @@ var InformasiDetail = /*#__PURE__*/function (_Component) {
     _this.props.navbgWhite(true);
 
     _this.state = {
-      info: []
+      info: [],
+      b: []
     };
     return _this;
   }
@@ -3755,21 +3764,17 @@ var InformasiDetail = /*#__PURE__*/function (_Component) {
                 children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("h5", {
                   className: "title-section text-left mb-3",
                   children: "Lampiran"
-                }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("ul", {
+                }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("ul", {
                   className: "lampiran",
-                  children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("li", {
-                    children: ["Lorem ipsum ", /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("a", {
-                      href: "/",
-                      className: "btnUnduh",
-                      children: "Unduh"
-                    })]
-                  }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("li", {
-                    children: ["Lorem ipsum ", /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("a", {
-                      href: "/",
-                      className: "btnUnduh",
-                      children: "Unduh"
-                    })]
-                  })]
+                  children: this.state.b.map(function (data) {
+                    return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("li", {
+                      children: [data.judul, " ", /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("a", {
+                        href: data.file,
+                        className: "btnUnduh",
+                        children: "Unduh"
+                      })]
+                    });
+                  })
                 })]
               })
             })]
@@ -8355,7 +8360,7 @@ __webpack_require__.r(__webpack_exports__);
 
 var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default()(function(i){return i[1]});
 // Module
-___CSS_LOADER_EXPORT___.push([module.id, ".tl .swiper-slide{\n  background-color: transparent;\n}\n.tl-up{  \n  height: 400px;\n}\n\n.tl-up .content{\n  height: 120px;\n  border-left: solid 2px #A96411;\n  position: relative;\n  top: 10%;\n  padding-left: 16px;\n}\n.tl-up::before{\n  content: \"\";\n  width: 18px;\n  height: 18px;  \n  background-color: #fff;\n  border: 1px solid #A96411;\n  border-radius: 50%;\n  position: absolute;\n  top: 48.5%;\n  z-index: 1;\n}\n.tl-up::after{\n  content: '';\n  width: 100%;\n  height: 2px;\n  background-color: #A96411;\n  /* z-index: 1; */\n  position: absolute;\n  top: 50%;\n}\n\n.tl-down{    \n  height: 400px;\n}\n\n.tl-down .content{\n  height: 120px;\n  border-left: solid 2px #A96411;\n  position: relative;\n  top: 60%;\n  padding-left: 16px;\n}\n.tl-down::before{\n  content: \"\";\n  width: 18px;\n  height: 18px;\n  background-color: #fff;\n  border: 1px solid #A96411;\n  border-radius: 50%;\n  position: absolute;\n  top: 48.5%;\n  z-index: 1;\n}\n.tl-down::after{\n  content: '';\n  width: 100%;\n  height: 2px;\n  background-color: #A96411;\n  /* z-index: 1; */\n  position: absolute;\n  top: 50%;\n}", ""]);
+___CSS_LOADER_EXPORT___.push([module.id, ".tl .swiper-slide{\r\n  background-color: transparent;\r\n}\r\n.tl-up{  \r\n  height: 400px;\r\n}\r\n\r\n.tl-up .content{\r\n  height: 120px;\r\n  border-left: solid 2px #A96411;\r\n  position: relative;\r\n  top: 10%;\r\n  padding-left: 16px;\r\n}\r\n.tl-up::before{\r\n  content: \"\";\r\n  width: 18px;\r\n  height: 18px;  \r\n  background-color: #fff;\r\n  border: 1px solid #A96411;\r\n  border-radius: 50%;\r\n  position: absolute;\r\n  top: 48.5%;\r\n  z-index: 1;\r\n}\r\n.tl-up::after{\r\n  content: '';\r\n  width: 100%;\r\n  height: 2px;\r\n  background-color: #A96411;\r\n  /* z-index: 1; */\r\n  position: absolute;\r\n  top: 50%;\r\n}\r\n\r\n.tl-down{    \r\n  height: 400px;\r\n}\r\n\r\n.tl-down .content{\r\n  height: 120px;\r\n  border-left: solid 2px #A96411;\r\n  position: relative;\r\n  top: 60%;\r\n  padding-left: 16px;\r\n}\r\n.tl-down::before{\r\n  content: \"\";\r\n  width: 18px;\r\n  height: 18px;\r\n  background-color: #fff;\r\n  border: 1px solid #A96411;\r\n  border-radius: 50%;\r\n  position: absolute;\r\n  top: 48.5%;\r\n  z-index: 1;\r\n}\r\n.tl-down::after{\r\n  content: '';\r\n  width: 100%;\r\n  height: 2px;\r\n  background-color: #A96411;\r\n  /* z-index: 1; */\r\n  position: absolute;\r\n  top: 50%;\r\n}", ""]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
