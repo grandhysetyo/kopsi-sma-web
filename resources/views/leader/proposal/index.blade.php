@@ -16,14 +16,14 @@
                         @if (seleksi_proposal($proposal->id))
                         @if ($proposal->seleksi_proposal->status == 1)
                         <div class="mt-8 mr-4 ml-4 block text-sm text-green-600 bg-green-200 border border-green-400 h-12 flex items-center p-4 rounded-sm relative" role="alert">
-                            <strong class="mr-1">Selamat, tim kamu lolos seleksi proposal, lihat review juri dibawah dan silahkan unggah naskah</strong> 
+                            <strong class="mr-1">Selamat, tim anda dapat melanjutkan penelitian, lihat review juri dimenu proposal dan silakan unggah naskah</strong> 
                             <button type="button" data-dismiss="alert" aria-label="Close" onclick="this.parentElement.remove();">
                                 <span class="absolute top-0 bottom-0 right-0 text-2xl px-3 py-1 hover:text-green-900" aria-hidden="true" >×</span>
                             </button>
                         </div>
                         @else
                         <div class="mt-8 mr-4 ml-4 block text-sm text-red-600 bg-red-200 border border-red-400 h-12 flex items-center p-4 rounded-sm relative" role="alert">
-                            <strong class="mr-1">Maaf, tim kamu belum berhasil lolos seleksi proposal, lihat review juri dibawah</strong> 
+                            <strong class="mr-1">Maaf, tim kamu belum dapat melanjutkan penelitian, lihat review juri dibawah</strong> 
                         </div>
                         @endif
                     @endif
@@ -65,7 +65,7 @@
                 <h3>Kamu hanya diperbolehkan unggah ulang 1 kali</h3>
 
                 @if (count_proposal(auth()->user()->ketua->tim->id) == 0)
-                    @if (seleksi_proposals(auth()->user()->ketua->tim->id))
+                    {{-- @if (seleksi_proposals(auth()->user()->ketua->tim->id))
                     @if (seleksi_proposal($proposal->id))
                             @else
                             <div class="m-5">
@@ -73,7 +73,11 @@
                                 class="focus:outline-none px-4 bg-yellow-500 p-3 ml-3 rounded-lg text-white hover:bg-yellow-400">Unggah Ulang</a>
                             </div>    
                         @endif
-                    @endif
+                    @endif --}}
+                    <div class="m-5">
+                        <a type="button" href="{{route('proposal.edit', $proposal->id)}}"
+                        class="focus:outline-none px-4 bg-yellow-500 p-3 ml-3 rounded-lg text-white hover:bg-yellow-400">Unggah Ulang</a>
+                    </div>  
                 @else
                     <h3>Kamu sudah melakukan perubahan terakhir pada {{$proposal->updated_at}}</h3>
                     

@@ -47,5 +47,43 @@ class InfoController extends Controller
         return redirect()->route('info.index');
     }
 
+    public function edit($id)
+    {
+        $info = Info::find($id);
+        return view('admin.info.edit', compact('info'));
+    }
+
+    public function update(Request $request, $id)
+    {
+        $this->validate($request, [
+            'judul' => 'required',
+            'content' => 'required',
+            'color' => 'required',
+        ]);
+
+        $info = Info::find($id);
+
+        $info->update([
+            'judul' => $request->judul,
+            'slug' => Str::slug($request->judul),
+            'content' => $request->content,
+            'color' => $request->color,
+        ]);
+
+        return redirect()->route('info.index');
+    }
+
+    public function destroy($id)
+    {
+        $info = Info::find($id);
+            
+        if (!$info) {
+            return redirect()->back();
+        }
+           
+        $info->delete();
+        return redirect()->route('info.index');
+    }
+
 
 }

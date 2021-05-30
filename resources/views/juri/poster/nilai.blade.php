@@ -76,10 +76,13 @@
 @endsection
 @section('script')
 <script>
-    $(document).ready(function(){
     
-     $('#validate_form').parsley();
+    (function($) {
+        $(document).ready(function(){
+    
+        $('#validate_form').parsley();
     
     });
+    })(jQuery);
 </script>
 @endsection

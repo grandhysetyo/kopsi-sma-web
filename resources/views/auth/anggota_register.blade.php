@@ -59,7 +59,8 @@
                 
                 <div class="col-lg-12">
                     
-                    <form action="{{route('login')}}" id="validate_form" method="POST" class="form-login">
+                    <form action="{{route('anggota_daftar_post')}}" id="validate_form" method="POST" class="form-login">
+                        @csrf
                         <div class="row">
                             <div class="col-12">                                                        
                                     <img src="{{asset('assets/images/logo.png')}}" class="img-fluid" style="height: 70px; display: block;
@@ -102,6 +103,10 @@
                                 </div>                                                                            
                             </div>
                             <div class="col-6">
+                                <div class="form-group">
+                                    <label for="name">Nama</label>
+                                    <input type="name" placeholder="Tulis nama kamu" id="name" value="{{old('name')}}" required data-parsley-trigger="keyup" class="form-control" name="name">
+                                </div>
                                 <div class="form-group">
                                     <label for="email">Surel (Email)</label>
                                     <input type="email" placeholder="Tulis alamat email kamu" id="email" value="{{old('email')}}" required data-parsley-type="email" data-parsley-trigger="keyup" class="form-control" name="email">

@@ -226,16 +226,21 @@
 @endsection
 @section('script')
 <script>
-    $(document).ready(function(){
     
-     $('#validate_form').parsley();
+    (function($) {
+        $(document).ready(function(){
+    
+        $('#validate_form').parsley();
     
     });
+    })(jQuery);
 </script>
 <script type="text/javascript">
-    $(document).ready(function(){
-      $('.rt_rw').mask('000/000');
-     });
+    (function($) {
+        $(document).ready(function(){
+        $('.rt_rw').mask('000/000');
+        });
+    })(jQuery);
 </script>
 <script type="text/javascript">
 

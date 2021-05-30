@@ -96,9 +96,9 @@ class DashboardJuriController extends Controller
             })
             ->editColumn('lolos', function ($data) {
                 if ($data->status == 1) {
-                    $st = '<a type="button" class="bg-green-500 text-white p-1 rounded mr-2 font-bold">Lolos</a>';
+                    $st = '<a type="button" class="bg-green-500 text-white p-1 rounded mr-2 font-bold">Lanjut</a>';
                 } else if ($data->status == 0) {
-                    $st = '<a type="button" class="bg-red-500 text-white p-1 rounded mr-2 font-bold">Tidak Lolos</a>';
+                    $st = '<a type="button" class="bg-red-500 text-white p-1 rounded mr-2 font-bold">Tidak Lanjut</a>';
                 }
 
                 return $st;

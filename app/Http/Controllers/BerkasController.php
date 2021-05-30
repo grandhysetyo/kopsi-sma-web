@@ -40,7 +40,13 @@ class BerkasController extends Controller
         $request->validate([
             'berkas_id' => 'required',
             'berkas' => 'required|file|mimes:pdf|max:2048',
-        ]);
+        ],[
+            'berkas_id.required'=> 'Jenis berkas tidak boleh kosong',
+            'berkas.required'=> 'Berkas tidak boleh kosong',
+            'berkas.file'=> 'Harus berbentuk berkas',
+            'berkas.mimes'=> 'Berkas harus PDF',
+            'berkas.max'=> 'Berkas harus kurang dari 2MB',
+           ]);
 
         $tim = Tim::find(auth()->user()->ketua->tim->id);
         if (berkas($request->berkas_id,auth()->user()->ketua->tim->id)) {
@@ -65,7 +71,12 @@ class BerkasController extends Controller
     {
         $request->validate([
             'berkas' => 'required|file|mimes:pdf|max:2048',
-        ]);
+        ],[
+            'berkas.required'=> 'Berkas tidak boleh kosong',
+            'berkas.file'=> 'Harus berbentuk berkas',
+            'berkas.mimes'=> 'Berkas harus PDF',
+            'berkas.max'=> 'Berkas harus kurang dari 2MB',
+           ]);
 
         $berkas = UnggahanBerkas::find($id);
         Storage::delete($berkas->berkas);

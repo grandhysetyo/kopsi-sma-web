@@ -130,9 +130,9 @@
 @endsection
 @section('script')
 <script>
-    $(document).ready(function(){
+    (function($) {
+        $(document).ready(function(){
       var id = $(this).attr('id');
-      $.noConflict();
      $('#example').DataTable({
       processing: true,
       stateSave: true,
@@ -168,6 +168,8 @@
     .columns.adjust()
 	.responsive.recalc();
     });
+    })(jQuery);
+    
     </script>
     <script>
 		const modal = document.querySelector('.main-modal');

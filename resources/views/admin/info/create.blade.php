@@ -67,3 +67,16 @@
     </div>
 </div>
 @endsection
+@section('script')
+<script type="text/javascript">
+(function($) {
+    $(document).ready(function() {
+    $('.summernote').summernote({
+        height: 200,
+    });
+    });
+})(jQuery);
+
+
+</script>
+@endsection

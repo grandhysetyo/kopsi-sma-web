@@ -37,7 +37,7 @@
                                 
                                         <div class="relative">
 
-                                            <input id="name"
+                                            <input id="judul"
                                                 name="judul"
                                                 type="text"
                                                 placeholder="Judul"
@@ -67,7 +67,7 @@
                                 
                                         <div class="relative">
 
-                                            <input id="name"
+                                            <input id="file"
                                                 name="berkas"
                                                 type="file"
                                                 placeholder="Mulai"
@@ -83,7 +83,7 @@
                                 
                                         <div class="relative">
 
-                                            <input id="name"
+                                            <input id="url"
                                                 name="url"
                                                 type="url"
                                                 placeholder="Tautan"
@@ -110,10 +110,10 @@
         
         <div class="bg-white overflow-hidden shadow-sm sm:rounded-lg">
             <div class="p-6 bg-white border-b border-gray-200">
-                <table id="example" class="stripe hover" style="width:100%; padding-top: 1em;  padding-bottom: 1em;">
+                <table id="examples" class="stripe hover" style="width:100%; padding-top: 1em;  padding-bottom: 1em;">
                     <thead>
                         <tr>
-                            <th data-priority="1">Judul</th>
+                            <th data-priority="1">id</th>
                             <th data-priority="2">Berkas</th>
                             <th data-priority="3">Aksi</th>
                         </tr>
@@ -126,15 +126,15 @@
 @endsection
 @section('script')
 <script>
-    $(document).ready(function(){
-      var id = $(this).attr('id');
-     $('#example').DataTable({
+    (function($) {
+        $(document).ready(function(){
+     $('#examples').DataTable({
       processing: true,
       stateSave: true,
       serverSide: true,
       responsive: true,
       ajax:{
-       url: "{{ route('berkas.index', $info->id) }}",
+       url: "{{ route('lampiran.index', $info->id) }}",
       },
       columns:[
         {
@@ -143,19 +143,24 @@
        },
        {
         data: 'file',
-        name: 'file'
+        name: 'file',
+        searchable: false,
+        orderable: false,
        },
        {
         data: 'edit',
         name: 'edit',
-        searchable: false
+        searchable: false,
+        orderable: false,
        }
        
       ]
      }).columns.adjust()
 	.responsive.recalc();
-    });
-    </script>
+    });  
+    })(jQuery);
+  
+</script>
     <script>
 		const modal = document.querySelector('.main-modal');
 		const closeButton = document.querySelectorAll('.modal-close');

@@ -74,9 +74,9 @@
                         </x-dropdown>
                         
                     
-                        {{-- <x-nav-link :href="route('daftar-peserta.index')">
-                            {{ __('Peserta') }}
-                        </x-nav-link> --}}
+                        <x-nav-link :href="route('seleksi-admin.index')">
+                            {{ __('Seleksi Adm') }}
+                        </x-nav-link>
 
                     </div>
                 </div>

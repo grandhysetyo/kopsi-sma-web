@@ -38,6 +38,7 @@ use App\Http\Controllers\InfoController;
 use App\Http\Controllers\LinimasaController;
 use App\Http\Controllers\TanggalController;
 use App\Http\Controllers\BerkasTambahanController;
+use App\Http\Controllers\SeleksiController;
 
 Route::get('/leader-register', [FrontendController::class, 'ketua'])->name('daftar_ketua');
 Route::get('/member-register', [FrontendController::class, 'anggota'])->name('daftar_anggota');
@@ -48,7 +49,7 @@ Route::get('/dashboard', function () {
 
 Route::post('kelurahanss', [FrontendController::class, 'kelurahann'])->name('kelurahanss');
 Route::post('kelurahans', [FrontendController::class, 'kelurahan'])->name('kelurahans');
-Route::post('bidang', [FrontendController::class, 'bidang'])->name('bidang-kategori');
+Route::post('bidang-lomba', [FrontendController::class, 'bidang'])->name('bidang-kategori');
 Route::post('sekolah-tim', [FrontendController::class, 'sekolah'])->name('tim-sekolah');
 Route::post('tim-tim', [FrontendController::class, 'tim'])->name('cari-tim');
 Route::post('user-user', [FrontendController::class, 'user'])->name('cari-user');
@@ -169,6 +170,7 @@ Route::group(['prefix' => 'admin', 'middleware' => ['auth','admin']], function()
     Route::get('linimasa/{id}/delete', [LinimasaController::class, 'destroy'])->name('hapus.linimasa');
     Route::resource('tanggal', TanggalController::class);
     Route::get('tanggal/{id}/delete', [TanggalController::class, 'destroy'])->name('hapus.tanggal');
+    Route::resource('seleksi-admin', SeleksiController::class);
 });
 
 require __DIR__.'/auth.php';
