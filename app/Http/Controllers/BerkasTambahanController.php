@@ -69,7 +69,7 @@ class BerkasTambahanController extends Controller
     {
         $info = Info::find($id);
         $file = BerkasPengumuman::find($berkas);
-        return view('admin.info.berkas.edit', compact('file','pengumuman'));        
+        return view('admin.info.berkas.edit', compact('file','info'));        
     }
 
     public function update(Request $request, $id, $berkas)

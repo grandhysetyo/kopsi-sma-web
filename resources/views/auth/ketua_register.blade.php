@@ -4,12 +4,15 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="csrf-token" content="{{ csrf_token() }}">
     <title>KOPSI | Masuk</title>
     <link rel="icon" type="image/png" href="/assets/images/favicon.png" />
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
     <link rel="stylesheet" href="{{asset('css/login.css')}}">
     <script src="{{asset('superadmin/js/jquery.min.js')}}"></script>
     <script src="//parsleyjs.org/dist/parsley.js"></script> 
+    <link rel="stylesheet" href="{{ asset('css/select2.min.css') }}">
+    <script src="{{ asset('js/select2.min.js') }}" defer></script>
     <style>
         input.parsley-success,
         select.parsley-success,
@@ -59,7 +62,8 @@
                 
                 <div class="col-lg-12">
                     
-                    <form action="{{route('login')}}" id="validate_form" method="POST" class="form-login">
+                    <form action="{{route('ketua_daftar_post')}}" id="validate_form" method="POST" class="form-login">
+                        @csrf
                         <div class="row">
                             <div class="col-12">                                                        
                                     <img src="{{asset('assets/images/logo.png')}}" class="img-fluid" style="height: 70px; display: block;
@@ -90,8 +94,8 @@
                                 </div>
                                 <div class="form-group">
                                     <label>Bidang </label>
-                                    <select class="form-control">
-                                        <option>Pilih Bidang</option>
+                                    <select name="bidang_id" required id="bidang_id" class="form-control">
+                                        <option></option>
                                     </select>
                                 </div>
                             </div>
@@ -190,7 +194,7 @@
         var CSRF_TOKEN = $('meta[name="csrf-token"]').attr('content');
         $(document).ready(function(){
 
-        $( "#bidang_id" ).select({
+        $("#bidang_id").select2({
             ajax: { 
             url: "{{route('bidang-kategori')}}",
             type: "post",

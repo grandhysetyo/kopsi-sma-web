@@ -9,7 +9,7 @@
     <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
         <div class="bg-white overflow-hidden shadow-sm sm:rounded-lg">
             <div id='recipients' class="p-8 mt-6 lg:mt-0 rounded shadow bg-white">
-                <form action="{{route('berkas.update', [$pengumuman->id,$file->id])}}" enctype="multipart/form-data" method="POST">
+                <form action="{{route('lampiran.update', [$info->id,$file->id])}}" enctype="multipart/form-data" method="POST">
                     @method('PUT')
                     @csrf
                     <div class="my-5">

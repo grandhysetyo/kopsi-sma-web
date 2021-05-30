@@ -34,7 +34,7 @@
                 </div>
             </div>
         </a>
-        <a href="{{route('proposal.juri')}}">
+        <a href="{{route('proposal.review')}}">
             <div class="relative bg-white hover:text-white hover:bg-gray-600 py-6 px-6 rounded-3xl w-64 my-4 shadow-xl">
                 <div class=" text-white flex items-center absolute rounded-full py-4 px-4 shadow-xl bg-blue-600 left-4 -top-6">
                     <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
@@ -52,7 +52,7 @@
         <div class="col-span-4">
             <h1> Naskah </h1>
         </div> 
-        <a href="{{route('proposal.juri')}}">
+        <a href="{{route('naskah.juri')}}">
             <div class="relative bg-white hover:text-white hover:bg-gray-600 py-6 px-6 rounded-3xl w-64 my-4 shadow-xl">
                 <div class=" text-white flex items-center absolute rounded-full py-4 px-4 shadow-xl bg-green-600 left-4 -top-6">
                     <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
@@ -65,7 +65,7 @@
                 </div>
             </div>
         </a>
-        <a href="{{route('naskah.juri')}}">
+        <a href="{{route('naskah.review')}}">
             <div class="relative bg-white hover:text-white hover:bg-gray-600 py-6 px-6 rounded-3xl w-64 my-4 shadow-xl">
                 <div class=" text-white flex items-center absolute rounded-full py-4 px-4 shadow-xl bg-green-600 left-4 -top-6">
                     <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
@@ -78,7 +78,7 @@
                 </div>
             </div>
         </a>
-        <a href="{{route('naskah.juri')}}">
+        <a href="{{route('naskah.ranking')}}">
             <div class="relative bg-white hover:text-white hover:bg-gray-600 py-6 px-6 rounded-3xl w-64 my-4 shadow-xl">
                 <div class=" text-white flex items-center absolute rounded-full py-4 px-4 shadow-xl bg-green-600 left-4 -top-6">
                     <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
@@ -95,7 +95,7 @@
         <div class="col-span-4">
             <h1> Poster </h1>
         </div> 
-        <a href="{{route('proposal.juri')}}">
+        <a href="{{route('poster.juri')}}">
             <div class="relative bg-white hover:text-white hover:bg-gray-600 py-6 px-6 rounded-3xl w-64 my-4 shadow-xl">
                 <div class=" text-white flex items-center absolute rounded-full py-4 px-4 shadow-xl bg-pink-600 left-4 -top-6">
                     <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
@@ -108,7 +108,7 @@
                 </div>
             </div>
         </a>
-        <a href="{{route('naskah.juri')}}">
+        <a href="{{route('poster.review')}}">
             <div class="relative bg-white hover:text-white hover:bg-gray-600 py-6 px-6 rounded-3xl w-64 my-4 shadow-xl">
                 <div class=" text-white flex items-center absolute rounded-full py-4 px-4 shadow-xl bg-pink-600 left-4 -top-6">
                     <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
@@ -125,7 +125,7 @@
         <div class="col-span-4">
             <h1> Presentasi </h1>
         </div>
-        <a href="{{route('naskah.juri')}}">
+        <a href="{{route('presentasi.juri')}}">
             <div class="relative bg-white hover:text-white hover:bg-gray-600 py-6 px-6 rounded-3xl w-64 my-4 shadow-xl">
                 <div class=" text-white flex items-center absolute rounded-full py-4 px-4 shadow-xl bg-yellow-600 left-4 -top-6">
                 <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
@@ -138,7 +138,7 @@
                 </div>
             </div>
         </a>
-        <a href="{{route('naskah.juri')}}">
+        <a href="{{route('presentasi.review')}}">
             <div class="relative bg-white hover:text-white hover:bg-gray-600 py-6 px-6 rounded-3xl w-64 my-4 shadow-xl">
                 <div class=" text-white flex items-center absolute rounded-full py-4 px-4 shadow-xl bg-yellow-600 left-4 -top-6">
                     <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">

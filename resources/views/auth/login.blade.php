@@ -61,6 +61,9 @@
                     <form action="{{route('login')}}" id="validate_form" method="POST" class="form-login">
                         @csrf
                         <x-auth-validation-errors class="mb-4" :errors="$errors" />
+                        @if(session('berhasil'))
+                            <span>Daftar Berhasil, Silahkan Masuk</span>
+                        @endif
                         <div>
                             <img src="{{asset('assets/images/logo.png')}}" class="img-fluid" style="height: 70px; display: block;
                             margin-left: auto;
@@ -77,7 +80,7 @@
                         <button type="submit" class="btn-me btn-masuk">Masuk</button>
                         <span class="text-muted">Belum memiliki akun?</span>
                         <a href="/leader-register" class="btn-me btn-daftar">Daftar Ketua</a>
-                        <a href="/member-register" class="btn-me btn-daftar">Daftar Member</a>
+                        <a href="/member-register" class="btn-me btn-daftar">Daftar Anggota</a>
                     </form>
                 </div>
             </div>

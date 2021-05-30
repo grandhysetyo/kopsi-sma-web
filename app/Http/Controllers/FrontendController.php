@@ -140,6 +140,14 @@ class FrontendController extends Controller
       'bidang_id' => 'required',
       'email' => 'required|string|email|max:255|unique:users',
       'password' => 'required|string|confirmed|min:8',
+  ],
+  [
+   'nisn.required'=> 'NISN tidak boleh kosong',
+   'nisn.unique'=> 'NISN sudah terdaftar',
+   'name.required'=> 'Nama tidak boleh kosong',
+   'bidang_id.required'=> 'Bidang tidak boleh kosong',
+   'password.required'=> 'Password tidak boleh kosong',
+   'email.unique'=> 'Email sudah terdaftar',
   ]);
 
   if (nisn($request->nisn)) {
@@ -218,6 +226,13 @@ class FrontendController extends Controller
       'name' => 'required|string|max:255',
       'email' => 'required|string|email|max:255|unique:users',
       'password' => 'required|string|confirmed|min:8',
+  ],
+  [
+   'nisn.required'=> 'NISN tidak boleh kosong',
+   'nisn.unique'=> 'NISN sudah terdaftar',
+   'name.required'=> 'Nama tidak boleh kosong',
+   'password.required'=> 'Password tidak boleh kosong',
+   'email.unique'=> 'Email sudah terdaftar',
   ]);
 
   $ketua = Ketua::with('tim')->where('kode',$request->kode)->first();

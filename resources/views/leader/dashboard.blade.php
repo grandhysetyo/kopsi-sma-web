@@ -45,14 +45,14 @@
                         @if (seleksi_proposal_cek(auth()->user()->ketua->tim->id))
                         @if ((proposal_tim(auth()->user()->ketua->tim->id)) == 1)
                         <div class="mt-8 mr-4 ml-4 block text-sm text-green-600 bg-green-200 border border-green-400 h-12 flex items-center p-4 rounded-sm relative" role="alert">
-                            <strong class="mr-1">Selamat, tim anda lolos seleksi proposal, lihat review juri dimenu proposal dan silakan unggah naskah</strong> 
+                            <strong class="mr-1">Selamat, tim anda dapat melanjutkan penelitian, lihat review juri dimenu proposal dan silakan unggah naskah</strong> 
                             <button type="button" data-dismiss="alert" aria-label="Close" onclick="this.parentElement.remove();">
                                 <span class="absolute top-0 bottom-0 right-0 text-2xl px-3 py-1 hover:text-green-900" aria-hidden="true" >×</span>
                             </button>
                         </div>
                         @else
                         <div class="mt-8 mr-4 ml-4 block text-sm text-red-600 bg-red-200 border border-red-400 h-12 flex items-center p-4 rounded-sm relative" role="alert">
-                            <strong class="mr-1">Maaf, tim anda belum berhasil lolos seleksi proposal, lihat review juri dimenu proposal</strong> 
+                            <strong class="mr-1">Maaf, tim anda belum dapat melanjutkan penelitian, lihat review juri dimenu proposal</strong> 
                         </div>
                         @endif
                     @endif

@@ -17,9 +17,8 @@
                             <th data-priority="3">Sekolah</th>
                             <th data-priority="4">Provinsi</th>
                             <th data-priority="5">Sub Bidang</th>
-                            <th data-priority="6">Bidang</th>
-                            <th data-priority="7">Status</th>
-                            <th data-priority="8">Aksi</th>
+                            <th data-priority="6">Status</th>
+                            <th data-priority="7">Aksi</th>
                         </tr>
                     </thead>
                 </table>
@@ -30,7 +29,8 @@
 @endsection
 @section('script')
 <script>
-    $(document).ready(function(){
+    (function($) {
+        $(document).ready(function(){
       var id = $(this).attr('id');
      $('#example').DataTable({
       processing: true,
@@ -62,10 +62,6 @@
         name: 'proposal.tim.bidang.nama_sub'
        },
        {
-        data: 'proposal.tim.bidang.bidang.singkat',
-        name: 'proposal.tim.bidang.bidang.singkat'
-       },
-       {
         data: 'lolos',
         name: 'lolos',
         searchable: false,
@@ -83,5 +79,6 @@
     .columns.adjust()
 	.responsive.recalc();
     });
+    })(jQuery);
     </script>
 @endsection

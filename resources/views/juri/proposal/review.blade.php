@@ -29,13 +29,13 @@
                             <div class="flex flex-col mb-4">
                                 <label for="jenis_kelamin"
                                     class="mb-1 text-xs sm:text-sm tracking-wide text-gray-600">
-                                    Status Kelolosan
+                                    Lanjut (Tidak perlu diubah, jika lanjut ke penelitian)
                                 </label>
                         
                                 <div class="relative">
                                     <select name="status" required class="text-sm sm:text-base relative w-full border rounded placeholder-gray-400 focus:border-indigo-400 focus:outline-none py-2 pr-2 pl-6">
-                                        <option value="1">Lolos</option>
-                                        <option value="0">Tidak Lolos</option>
+                                        <option value="1">Lanjut</option>
+                                        <option value="0">Tidak Lanjut</option>
                                     </select>
                         
                                 </div>
@@ -65,10 +65,13 @@
 @endsection
 @section('script')
 <script>
-    $(document).ready(function(){
     
-     $('#validate_form').parsley();
+    (function($) {
+        $(document).ready(function(){
+    
+        $('#validate_form').parsley();
     
     });
+    })(jQuery);
 </script>
 @endsection

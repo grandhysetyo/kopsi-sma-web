@@ -15,8 +15,8 @@ const SectionIntro = () => {
                                 Daftar
                             </button>
                             <div className="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                                <a className="dropdown-item" href="/leader-register">Leader</a>
-                                <a className="dropdown-item" href="/member-register">Member</a>                                
+                                <a className="dropdown-item" href="/leader-register">Ketua</a>
+                                <a className="dropdown-item" href="/member-register">Anggota</a>                                
                             </div>
                         </div>
                     </div>

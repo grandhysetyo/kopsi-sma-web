@@ -27,7 +27,12 @@ class ProposalController extends Controller
 
         $request->validate([
             'proposal' => 'required|file|mimes:pdf|max:5048',
-		]);
+		],[
+            'proposal.required'=> 'Proposal tidak boleh kosong',
+            'proposal.file'=> 'Harus berbentuk berkas',
+            'proposal.mimes'=> 'Berkas harus PDF',
+            'proposal.max'=> 'Berkas harus kurang dari 5MB',
+           ]);
 
         $tim = Tim::with('bidang')->find(auth()->user()->ketua->tim->id);
 
@@ -59,7 +64,12 @@ class ProposalController extends Controller
     {
         $request->validate([
             'proposal' => 'required|file|mimes:pdf|max:5048',
-        ]);
+        ],[
+            'proposal.required'=> 'Proposal tidak boleh kosong',
+            'proposal.file'=> 'Harus berbentuk berkas',
+            'proposal.mimes'=> 'Berkas harus PDF',
+            'proposal.max'=> 'Berkas harus kurang dari 5MB',
+           ]);
 
         $proposal = Proposal::find($id);
         Storage::delete($proposal->proposal);

@@ -25,9 +25,8 @@
 @endsection
 @section('script')
 <script>
-    $(document).ready(function(){
-      var id = $(this).attr('id');
-      $.noConflict();
+    (function($) {
+        $(document).ready(function(){
      $('#example').DataTable({
       processing: true,
       stateSave: true,
@@ -53,5 +52,7 @@
     .columns.adjust()
 	.responsive.recalc();
     });
+    })(jQuery);
+    
     </script>
 @endsection

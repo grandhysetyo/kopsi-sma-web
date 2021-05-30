@@ -11,15 +11,10 @@
         <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&display=swap">
         <!-- Styles -->
         <link rel="stylesheet" href="{{ asset('css/app-tail.css') }}">
-        <script src="https://cdn.jsdelivr.net/npm/chart.js@3.1.0/dist/chart.min.js"></script>
-
-        @yield('style')
-        <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
 
         <!-- Scripts -->
         <script src="{{ asset('js/app-tail.js') }}" defer></script>
 
-       
         <script src="{{asset('superadmin/js/jquery.min.js')}}"></script>
         <link href="https://cdn.datatables.net/1.10.19/css/jquery.dataTables.min.css" rel="stylesheet">
         <!--Responsive Extension Datatables CSS-->
@@ -224,13 +219,7 @@
         </div>
         <script src="https://cdn.datatables.net/1.10.19/js/jquery.dataTables.min.js"></script>
         <script src="https://cdn.datatables.net/responsive/2.2.3/js/dataTables.responsive.min.js"></script>
-        <script type="text/javascript">
-            $(document).ready(function() {
-            $('.summernote').summernote({
-                height: 200,
-            });
-        });
-        </script>
+        
         @yield('script')
         @stack('scripts')
         
